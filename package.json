@@ -1,0 +1,45 @@
+{
+  "name": "@sjafferi/svelte-images",
+  "version": "0.0.1",
+  "description": "A Svelte component for displaying images",
+  "main": "./dist/svelte-images.cjs.js",
+  "module": "./dist/svelte-images.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjafferi/svelte-images.git"
+  },
+  "keywords": [
+    "svelte",
+    "images"
+  ],
+  "author": "sjafferi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjafferi/svelte-images/issues"
+  },
+  "homepage": "https://github.com/sjafferi/svelte-images#readme",
+  "devDependencies": {
+    "@daybrush/builder": "^0.1.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-svelte3": "^2.7.3",
+    "print-sizes": "^0.1.0",
+    "rollup": "^1.27.9",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^1.0.4",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-terser": "^5.2.0",
+    "sirv-cli": "^0.4.5",
+    "svelte": "^3.16.1",
+    "svelte-preprocess": "^3.3.0"
+  }
+}
