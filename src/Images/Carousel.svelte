@@ -54,8 +54,9 @@
     height: 100%;
   }
   .carousel img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 85vw;
+    max-height: 100vh;
     margin: auto;
     user-select: none;
   }
@@ -75,7 +76,7 @@
     height: 50px;
     display: flex;
     color: white;
-    margin: 0 20px;
+    margin: 0 35px;
   }
   .nav svg {
     display: inline-block;

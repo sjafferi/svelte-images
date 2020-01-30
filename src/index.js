@@ -1,5 +1,1 @@
-import Images from "./Images/index.svelte";
-
-export default (() => {
-  return Images;
-})();
+export { default as Images } from "./Images/index.svelte";

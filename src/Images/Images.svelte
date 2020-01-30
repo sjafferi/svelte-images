@@ -15,35 +15,23 @@
 <style>
   .gallery {
     display: flex;
-    flex-wrap: wrap;
-    flex: 1 1;
+    flex-flow: row wrap;
   }
 
-  .img-container {
-    background-color: #eee;
-    box-sizing: border-box;
-    float: left;
-    margin: calc(var(--gutter) * 1px);
-    overflow: hidden;
-    position: relative;
-    width: calc(25% - var(--gutter) * 2px);
-  }
-
-  .img-container:hover {
-    opacity: 0.9;
-  }
-
-  .img-container img {
+  img {
+    max-width: 200px;
+    width: 100% !important;
+    height: auto !important;
     cursor: pointer;
-    position: absolute;
-    max-width: 100%;
+    margin: calc(var(--gutter) * 2px);
+  }
+  img:hover {
+    opacity: 0.8;
   }
 </style>
 
 <div class="gallery" style="--gutter: {gutter};">
   {#each images as image, i}
-    <div class="img-container">
-      <img {...image} alt={image.alt || ''} on:click={() => popModal(i)} />
-    </div>
+    <img {...image} alt={image.alt || ''} on:click={() => popModal(i)} />
   {/each}
 </div>
