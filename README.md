@@ -4,9 +4,8 @@ A Svelte component for displaying images
 
 ## Installation
 
-1. Install svelte-images
+Install svelte-images
    `yarn add svelte-images`
-2. Use the Images component in your svelte application
 
 ## Example
 
