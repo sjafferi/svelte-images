@@ -4,7 +4,7 @@
 
   export let images = [];
   export let gutter = 2;
-  export let numCols;
+  export let numCols = 2;
 
   const { open, close } = getContext("simple-modal");
 
@@ -35,7 +35,7 @@
 <div class="gallery" style="--gutter: {gutter};">
   {#each images as image, i}
     <img
-      style={numCols != undefined ? `width: ${100 / images.length - 2}%;` : 'max-width: 200px;'}
+      style={numCols != undefined ? `width: ${100 / numCols - 6}%;` : 'max-width: 200px;'}
       {...image}
       src={image.thumbnail || image.src}
       alt={image.alt || ''}

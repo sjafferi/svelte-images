@@ -95,6 +95,14 @@
   .empty {
     width: 100px;
   }
+  @media (max-width: 550px) {
+    .carousel img {
+      max-width: 60vw;
+    }
+    .nav button {
+      margin: 0 10px;
+    }
+  }
 </style>
 
 <div class="carousel" style={`transform: translate3d(${translateX}px, 0, 0);`}>
