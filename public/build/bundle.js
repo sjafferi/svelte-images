@@ -1354,16 +1354,26 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
-    	child_ctx[7] = i;
+    	child_ctx[6] = list[i];
+    	child_ctx[8] = i;
     	return child_ctx;
     }
 
-    // (34:2) {#each images as image, i}
+    // (35:2) {#each images as image, i}
     function create_each_block$1(ctx) {
     	let img;
     	let dispose;
-    	let img_levels = [/*image*/ ctx[5], { alt: /*image*/ ctx[5].alt || "" }];
+
+    	let img_levels = [
+    		{
+    			style: /*numCols*/ ctx[2] != undefined
+    			? `width: ${100 / /*images*/ ctx[0].length - 2}%;`
+    			: "max-width: 200px;"
+    		},
+    		/*image*/ ctx[6],
+    		{ alt: /*image*/ ctx[6].alt || "" }
+    	];
+
     	let img_data = {};
 
     	for (let i = 0; i < img_levels.length; i += 1) {
@@ -1371,15 +1381,15 @@ var app = (function () {
     	}
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[4](/*i*/ ctx[7], ...args);
+    		return /*click_handler*/ ctx[5](/*i*/ ctx[8], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			img = element("img");
     			set_attributes(img, img_data);
-    			toggle_class(img, "svelte-1f1nv0m", true);
-    			add_location(img, file$1, 34, 4, 634);
+    			toggle_class(img, "svelte-18y9yg1", true);
+    			add_location(img, file$1, 35, 4, 661);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1389,11 +1399,16 @@ var app = (function () {
     			ctx = new_ctx;
 
     			set_attributes(img, get_spread_update(img_levels, [
-    				dirty & /*images*/ 1 && /*image*/ ctx[5],
-    				dirty & /*images*/ 1 && { alt: /*image*/ ctx[5].alt || "" }
+    				dirty & /*numCols, undefined, images*/ 5 && {
+    					style: /*numCols*/ ctx[2] != undefined
+    					? `width: ${100 / /*images*/ ctx[0].length - 2}%;`
+    					: "max-width: 200px;"
+    				},
+    				dirty & /*images*/ 1 && /*image*/ ctx[6],
+    				dirty & /*images*/ 1 && { alt: /*image*/ ctx[6].alt || "" }
     			]));
 
-    			toggle_class(img, "svelte-1f1nv0m", true);
+    			toggle_class(img, "svelte-18y9yg1", true);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(img);
@@ -1405,7 +1420,7 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(34:2) {#each images as image, i}",
+    		source: "(35:2) {#each images as image, i}",
     		ctx
     	});
 
@@ -1429,9 +1444,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "gallery svelte-1f1nv0m");
+    			attr_dev(div, "class", "gallery svelte-18y9yg1");
     			set_style(div, "--gutter", /*gutter*/ ctx[1]);
-    			add_location(div, file$1, 32, 0, 551);
+    			add_location(div, file$1, 33, 0, 578);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1444,7 +1459,7 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*images, popModal*/ 5) {
+    			if (dirty & /*numCols, undefined, images, popModal*/ 13) {
     				each_value = /*images*/ ctx[0];
     				let i;
 
@@ -1493,13 +1508,14 @@ var app = (function () {
     function instance$1($$self, $$props, $$invalidate) {
     	let { images = [] } = $$props;
     	let { gutter = 2 } = $$props;
+    	let { numCols } = $$props;
     	const { open } = getContext("simple-modal");
 
     	const popModal = idx => {
     		open(Carousel, { images, curr_idx: idx });
     	};
 
-    	const writable_props = ["images", "gutter"];
+    	const writable_props = ["images", "gutter", "numCols"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Images> was created with unknown prop '${key}'`);
@@ -1510,24 +1526,26 @@ var app = (function () {
     	$$self.$set = $$props => {
     		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("gutter" in $$props) $$invalidate(1, gutter = $$props.gutter);
+    		if ("numCols" in $$props) $$invalidate(2, numCols = $$props.numCols);
     	};
 
     	$$self.$capture_state = () => {
-    		return { images, gutter };
+    		return { images, gutter, numCols };
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("gutter" in $$props) $$invalidate(1, gutter = $$props.gutter);
+    		if ("numCols" in $$props) $$invalidate(2, numCols = $$props.numCols);
     	};
 
-    	return [images, gutter, popModal, open, click_handler];
+    	return [images, gutter, numCols, popModal, open, click_handler];
     }
 
     class Images extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { images: 0, gutter: 1 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { images: 0, gutter: 1, numCols: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1535,6 +1553,13 @@ var app = (function () {
     			options,
     			id: create_fragment$1.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*numCols*/ ctx[2] === undefined && !("numCols" in props)) {
+    			console.warn("<Images> was created without expected prop 'numCols'");
+    		}
     	}
 
     	get images() {
@@ -1550,6 +1575,14 @@ var app = (function () {
     	}
 
     	set gutter(value) {
+    		throw new Error("<Images>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get numCols() {
+    		throw new Error("<Images>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set numCols(value) {
     		throw new Error("<Images>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
