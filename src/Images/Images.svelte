@@ -4,6 +4,7 @@
 
   export let images = [];
   export let gutter = 2;
+  export let numCols;
 
   const { open } = getContext("simple-modal");
 
@@ -19,19 +20,23 @@
   }
 
   img {
-    max-width: 200px;
-    width: 100% !important;
+    width: 100%;
     height: auto !important;
     cursor: pointer;
     margin: calc(var(--gutter) * 2px);
   }
   img:hover {
-    opacity: 0.8;
+    opacity: 0.5;
+    filter: grayscale(0.5) blur(1px);
   }
 </style>
 
 <div class="gallery" style="--gutter: {gutter};">
   {#each images as image, i}
-    <img {...image} alt={image.alt || ''} on:click={() => popModal(i)} />
+    <img
+      style={numCols != undefined ? `width: ${100 / images.length - 2}%;` : 'max-width: 200px;'}
+      {...image}
+      alt={image.alt || ''}
+      on:click={() => popModal(i)} />
   {/each}
 </div>

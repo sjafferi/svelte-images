@@ -45,6 +45,13 @@ Install svelte-images
 </main>
 ```
 
+### Properties
+
+| Prop name | Format                                      | Default                                                       |
+| --------- | ------------------------------------------- |
+| images*   | { src: "...", alt: "..", title: "..", ... } | []                                                            |
+| gutter    | number                                      | 3                                                             |
+| numCols   | number                                      | automatically set depeneding on width of container if not set |
   
 ## Contributing
 
