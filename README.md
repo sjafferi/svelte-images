@@ -47,11 +47,11 @@ Install svelte-images
 
 ### Properties
 
-| Property | Format                                          | Default                                           |
-| -------- | ----------------------------------------------- | ------------------------------------------------- |
-| images*  | `[{ src: "...", alt: "..", title: "..", ... }]` | []                                                |  |
-| gutter   | number                                          | 3                                                 |  |
-| numCols  | number                                          | automatically set depending on width of container |
+| Property | Format                                                    | Default                                           |
+| -------- | --------------------------------------------------------- | ------------------------------------------------- |
+| images*  | `[{ src: "...", thumbnail: "...", ...<img> attributes }]` | []                                                |  |
+| gutter   | number                                                    | 3                                                 |  |
+| numCols  | number                                                    | automatically set depending on width of container |
   
 ## Contributing
 

@@ -36,6 +36,7 @@
     <img
       style={numCols != undefined ? `width: ${100 / images.length - 2}%;` : 'max-width: 200px;'}
       {...image}
+      src={image.thumbnail || image.src}
       alt={image.alt || ''}
       on:click={() => popModal(i)} />
   {/each}
