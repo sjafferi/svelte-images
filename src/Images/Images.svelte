@@ -6,11 +6,12 @@
   export let gutter = 2;
   export let numCols;
 
-  const { open } = getContext("simple-modal");
+  const { open, close } = getContext("simple-modal");
 
-  const popModal = idx => {
-    open(Carousel, { images, curr_idx: idx });
-  };
+  const popModal = idx =>
+    setTimeout(() => {
+      open(Carousel, { images, curr_idx: idx, close });
+    }, 0);
 </script>
 
 <style>

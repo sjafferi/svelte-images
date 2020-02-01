@@ -1,8 +1,11 @@
 <script>
   import { fade } from "svelte/transition";
+  import ClickOutside from "./ClickOutside.svelte";
   export let images;
+  export let close;
   export let curr_idx = 0;
-
+  const left_nav_buttons = new Array(images.length);
+  const right_nav_buttons = new Array(images.length);
   let translateX = -curr_idx * window.innerWidth;
 
   function increment(num) {
@@ -55,15 +58,18 @@
   }
   .carousel img {
     height: auto;
-    width: 85vw;
-    max-height: 100vh;
+    max-width: 85vw;
+    max-height: 85vh;
     margin: auto;
     user-select: none;
   }
-  .carousel .img-container {
+  :global(.carousel .click-outside-wrapper) {
     width: 100vw;
+  }
+  .img-container {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   .nav button {
     cursor: pointer;
@@ -93,29 +99,44 @@
 
 <div class="carousel" style={`transform: translate3d(${translateX}px, 0, 0);`}>
   {#each images as image, i}
-    <div class="img-container">
-      <div class="nav">
-        {#if blink && curr_idx > 0}
-          <button on:click={left} in:fade out:fade>
-            <svg role="presentation" viewBox="0 0 24 24" class="css-8wgz7g">
-              <path
-                d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z" />
-            </svg>
-          </button>
-        {:else}
-          <div class="empty" />
-        {/if}
-        {#if blink && curr_idx < images.length - 1}
-          <button on:click={right} in:fade out:fade>
-            <svg role="presentation" viewBox="0 0 24 24" class="css-8wgz7g">
-              <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z" />
-            </svg>
-          </button>
-        {:else}
-          <div class="empty" />
-        {/if}
+    <ClickOutside
+      className="click-outside-wrapper"
+      on:clickoutside={close}
+      exclude={[...left_nav_buttons, ...right_nav_buttons]}>
+      <div class="img-container">
+        <div class="nav">
+          {#if blink && curr_idx > 0}
+            <button
+              on:click={left}
+              in:fade
+              out:fade
+              bind:this={left_nav_buttons[i]}>
+              <svg role="presentation" viewBox="0 0 24 24">
+                <path
+                  d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594
+                  4.594z" />
+              </svg>
+            </button>
+          {:else}
+            <div class="empty" />
+          {/if}
+          {#if blink && curr_idx < images.length - 1}
+            <button
+              on:click={right}
+              in:fade
+              out:fade
+              bind:this={right_nav_buttons[i]}>
+              <svg role="presentation" viewBox="0 0 24 24">
+                <path
+                  d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z" />
+              </svg>
+            </button>
+          {:else}
+            <div class="empty" />
+          {/if}
+        </div>
+        <img {...image} alt={image.alt || ''} />
       </div>
-      <img {...image} alt={image.alt || ''} />
-    </div>
+    </ClickOutside>
   {/each}
 </div>
