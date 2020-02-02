@@ -1,4 +1,5 @@
 <script>
+  // from https://github.com/flekschas/svelte-simple-modal
   import { setContext as baseSetContext } from "svelte";
   import { fade } from "svelte/transition";
   export let key = "simple-modal";

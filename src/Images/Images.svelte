@@ -4,7 +4,7 @@
 
   export let images = [];
   export let gutter = 2;
-  export let numCols = 2;
+  export let numCols;
 
   const { open, close } = getContext("simple-modal");
 

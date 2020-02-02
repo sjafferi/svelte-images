@@ -29,5 +29,5 @@
 </style>
 
 <main>
-  <Images {images} gutter={5} />
+  <Images {images} gutter={5} numCols={3} />
 </main>

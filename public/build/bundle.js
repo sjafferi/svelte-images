@@ -1725,7 +1725,7 @@ var app = (function () {
     			img = element("img");
     			set_attributes(img, img_data);
     			toggle_class(img, "svelte-18y9yg1", true);
-    			add_location(img, file$2, 36, 4, 708);
+    			add_location(img, file$2, 36, 4, 704);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1785,7 +1785,7 @@ var app = (function () {
 
     			attr_dev(div, "class", "gallery svelte-18y9yg1");
     			set_style(div, "--gutter", /*gutter*/ ctx[1]);
-    			add_location(div, file$2, 34, 0, 625);
+    			add_location(div, file$2, 34, 0, 621);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1847,7 +1847,7 @@ var app = (function () {
     function instance$2($$self, $$props, $$invalidate) {
     	let { images = [] } = $$props;
     	let { gutter = 2 } = $$props;
-    	let { numCols = 2 } = $$props;
+    	let { numCols } = $$props;
     	const { open, close } = getContext("simple-modal");
 
     	const popModal = idx => setTimeout(
@@ -1895,6 +1895,13 @@ var app = (function () {
     			options,
     			id: create_fragment$2.name
     		});
+
+    		const { ctx } = this.$$;
+    		const props = options.props || {};
+
+    		if (/*numCols*/ ctx[2] === undefined && !("numCols" in props)) {
+    			console.warn("<Images> was created without expected prop 'numCols'");
+    		}
     	}
 
     	get images() {
@@ -1927,7 +1934,7 @@ var app = (function () {
     const { Object: Object_1 } = globals;
     const file$3 = "src/Images/Modal.svelte";
 
-    // (98:2) {#if Component}
+    // (99:2) {#if Component}
     function create_if_block$1(ctx) {
     	let div3;
     	let div2;
@@ -1955,15 +1962,15 @@ var app = (function () {
     			create_component(component.$$.fragment);
     			attr_dev(div0, "class", "content svelte-p7calc");
     			attr_dev(div0, "style", /*cssContent*/ ctx[10]);
-    			add_location(div0, file$3, 109, 10, 2835);
+    			add_location(div0, file$3, 110, 10, 2894);
     			attr_dev(div1, "class", "window svelte-p7calc");
     			attr_dev(div1, "style", /*cssWindow*/ ctx[9]);
-    			add_location(div1, file$3, 105, 8, 2704);
+    			add_location(div1, file$3, 106, 8, 2763);
     			attr_dev(div2, "class", "window-wrap svelte-p7calc");
-    			add_location(div2, file$3, 104, 6, 2653);
+    			add_location(div2, file$3, 105, 6, 2712);
     			attr_dev(div3, "class", "bg svelte-p7calc");
     			attr_dev(div3, "style", /*cssBg*/ ctx[8]);
-    			add_location(div3, file$3, 98, 4, 2491);
+    			add_location(div3, file$3, 99, 4, 2550);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -2034,7 +2041,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(98:2) {#if Component}",
+    		source: "(99:2) {#if Component}",
     		ctx
     	});
 
@@ -2057,7 +2064,7 @@ var app = (function () {
     			t = space();
     			if (default_slot) default_slot.c();
     			attr_dev(div, "class", "svelte-p7calc");
-    			add_location(div, file$3, 96, 0, 2463);
+    			add_location(div, file$3, 97, 0, 2522);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2604,7 +2611,11 @@ var app = (function () {
     	let current;
 
     	const images_1 = new Images_1({
-    			props: { images: /*images*/ ctx[0], gutter: 5 },
+    			props: {
+    				images: /*images*/ ctx[0],
+    				gutter: 5,
+    				numCols: 3
+    			},
     			$$inline: true
     		});
 
