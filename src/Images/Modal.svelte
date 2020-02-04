@@ -81,6 +81,7 @@
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.66);
+    transition: opacity 200ms ease 0s;
   }
   .window-wrap {
     position: relative;

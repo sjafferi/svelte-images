@@ -1934,7 +1934,7 @@ var app = (function () {
     const { Object: Object_1 } = globals;
     const file$3 = "src/Images/Modal.svelte";
 
-    // (99:2) {#if Component}
+    // (100:2) {#if Component}
     function create_if_block$1(ctx) {
     	let div3;
     	let div2;
@@ -1960,17 +1960,17 @@ var app = (function () {
     			div1 = element("div");
     			div0 = element("div");
     			create_component(component.$$.fragment);
-    			attr_dev(div0, "class", "content svelte-p7calc");
+    			attr_dev(div0, "class", "content svelte-1e954pe");
     			attr_dev(div0, "style", /*cssContent*/ ctx[10]);
-    			add_location(div0, file$3, 110, 10, 2894);
-    			attr_dev(div1, "class", "window svelte-p7calc");
+    			add_location(div0, file$3, 111, 10, 2933);
+    			attr_dev(div1, "class", "window svelte-1e954pe");
     			attr_dev(div1, "style", /*cssWindow*/ ctx[9]);
-    			add_location(div1, file$3, 106, 8, 2763);
-    			attr_dev(div2, "class", "window-wrap svelte-p7calc");
-    			add_location(div2, file$3, 105, 6, 2712);
-    			attr_dev(div3, "class", "bg svelte-p7calc");
+    			add_location(div1, file$3, 107, 8, 2802);
+    			attr_dev(div2, "class", "window-wrap svelte-1e954pe");
+    			add_location(div2, file$3, 106, 6, 2751);
+    			attr_dev(div3, "class", "bg svelte-1e954pe");
     			attr_dev(div3, "style", /*cssBg*/ ctx[8]);
-    			add_location(div3, file$3, 99, 4, 2550);
+    			add_location(div3, file$3, 100, 4, 2589);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -2041,7 +2041,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(99:2) {#if Component}",
+    		source: "(100:2) {#if Component}",
     		ctx
     	});
 
@@ -2063,8 +2063,8 @@ var app = (function () {
     			if (if_block) if_block.c();
     			t = space();
     			if (default_slot) default_slot.c();
-    			attr_dev(div, "class", "svelte-p7calc");
-    			add_location(div, file$3, 97, 0, 2522);
+    			attr_dev(div, "class", "svelte-1e954pe");
+    			add_location(div, file$3, 98, 0, 2561);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
