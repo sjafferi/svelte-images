@@ -6,8 +6,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
+    "start": "sirv docs --single",
+    "start:dev": "sirv docs --single --dev",
     "build:dev": "rollup -c"
   },
   "repository": {
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/sjafferi/svelte-images#readme",
   "devDependencies": {
-    "@daybrush/builder": "^0.1.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",

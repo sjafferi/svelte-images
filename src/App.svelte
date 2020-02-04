@@ -1,25 +1,8 @@
 <script>
   import Images from "./Images/index.svelte";
-  const images = [
-    {
-      src: "/borat.png"
-    },
-    {
-      src: "/borat.png"
-    },
-    {
-      src: "/borat.png"
-    },
-    {
-      src: "/borat.png"
-    },
-    {
-      src: "/borat.png"
-    },
-    {
-      src: "/borat.png"
-    }
-  ];
+  const images = [...Array(6).keys()].map(i => ({
+    src: `/images/${i + 1}.jpg`
+  }));
 </script>
 
 <style>
