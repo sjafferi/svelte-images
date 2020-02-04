@@ -2624,7 +2624,7 @@ var app = (function () {
     			main = element("main");
     			create_component(images_1.$$.fragment);
     			attr_dev(main, "class", "svelte-14tdwmw");
-    			add_location(main, file$5, 13, 0, 204);
+    			add_location(main, file$5, 13, 0, 205);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2662,7 +2662,7 @@ var app = (function () {
     }
 
     function instance$5($$self) {
-    	const images = [...Array(6).keys()].map(i => ({ src: `/images/${i + 1}.jpg` }));
+    	const images = [...Array(6).keys()].map(i => ({ src: `./images/${i + 1}.jpg` }));
 
     	$$self.$capture_state = () => {
     		return {};

@@ -1,7 +1,7 @@
 <script>
   import Images from "./Images/index.svelte";
   const images = [...Array(6).keys()].map(i => ({
-    src: `/images/${i + 1}.jpg`
+    src: `./images/${i + 1}.jpg`
   }));
 </script>
 
