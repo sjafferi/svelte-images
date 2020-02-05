@@ -88,6 +88,9 @@
     color: white;
     margin: 0 17px;
   }
+  .nav button:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
   .nav svg {
     display: inline-block;
     fill: currentcolor;
@@ -98,6 +101,20 @@
   }
   .empty {
     width: 100px;
+  }
+  @media (max-width: 800px) {
+    .carousel img {
+      max-width: 75vw;
+    }
+    .nav button {
+      margin: 0 12px;
+      width: 4em;
+      height: 4em;
+    }
+    .nav svg {
+      width: 4em;
+      height: 4em;
+    }
   }
   @media (max-width: 550px) {
     .carousel img {

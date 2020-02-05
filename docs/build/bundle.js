@@ -991,15 +991,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (140:10) {:else}
+    // (157:10) {:else}
     function create_else_block_1(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "empty svelte-1n24g5z");
-    			add_location(div, file$1, 140, 12, 3179);
+    			attr_dev(div, "class", "empty svelte-14aj0xn");
+    			add_location(div, file$1, 157, 12, 3471);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1016,14 +1016,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(140:10) {:else}",
+    		source: "(157:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:10) {#if blink && curr_idx > 0}
+    // (145:10) {#if blink && curr_idx > 0}
     function create_if_block_1(ctx) {
     	let button;
     	let svg;
@@ -1042,13 +1042,13 @@ var app = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			attr_dev(path, "d", "M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594\n                  4.594z");
-    			add_location(path, file$1, 134, 16, 2996);
+    			add_location(path, file$1, 151, 16, 3288);
     			attr_dev(svg, "role", "presentation");
     			attr_dev(svg, "viewBox", "0 0 24 24");
-    			attr_dev(svg, "class", "svelte-1n24g5z");
-    			add_location(svg, file$1, 133, 14, 2934);
-    			attr_dev(button, "class", "svelte-1n24g5z");
-    			add_location(button, file$1, 128, 12, 2790);
+    			attr_dev(svg, "class", "svelte-14aj0xn");
+    			add_location(svg, file$1, 150, 14, 3226);
+    			attr_dev(button, "class", "svelte-14aj0xn");
+    			add_location(button, file$1, 145, 12, 3082);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1095,22 +1095,22 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(128:10) {#if blink && curr_idx > 0}",
+    		source: "(145:10) {#if blink && curr_idx > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (154:10) {:else}
+    // (171:10) {:else}
     function create_else_block(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "empty svelte-1n24g5z");
-    			add_location(div, file$1, 154, 12, 3649);
+    			attr_dev(div, "class", "empty svelte-14aj0xn");
+    			add_location(div, file$1, 171, 12, 3941);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1127,14 +1127,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(154:10) {:else}",
+    		source: "(171:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (143:10) {#if blink && curr_idx < images.length - 1}
+    // (160:10) {#if blink && curr_idx < images.length - 1}
     function create_if_block(ctx) {
     	let button;
     	let svg;
@@ -1153,13 +1153,13 @@ var app = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			attr_dev(path, "d", "M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z");
-    			add_location(path, file$1, 149, 16, 3491);
+    			add_location(path, file$1, 166, 16, 3783);
     			attr_dev(svg, "role", "presentation");
     			attr_dev(svg, "viewBox", "0 0 24 24");
-    			attr_dev(svg, "class", "svelte-1n24g5z");
-    			add_location(svg, file$1, 148, 14, 3429);
-    			attr_dev(button, "class", "svelte-1n24g5z");
-    			add_location(button, file$1, 143, 12, 3283);
+    			attr_dev(svg, "class", "svelte-14aj0xn");
+    			add_location(svg, file$1, 165, 14, 3721);
+    			attr_dev(button, "class", "svelte-14aj0xn");
+    			add_location(button, file$1, 160, 12, 3575);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1206,14 +1206,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(143:10) {#if blink && curr_idx < images.length - 1}",
+    		source: "(160:10) {#if blink && curr_idx < images.length - 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (122:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>
+    // (139:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>
     function create_default_slot(ctx) {
     	let div1;
     	let div0;
@@ -1263,13 +1263,13 @@ var app = (function () {
     			t1 = space();
     			img = element("img");
     			t2 = space();
-    			attr_dev(div0, "class", "nav svelte-1n24g5z");
-    			add_location(div0, file$1, 126, 8, 2722);
+    			attr_dev(div0, "class", "nav svelte-14aj0xn");
+    			add_location(div0, file$1, 143, 8, 3014);
     			set_attributes(img, img_data);
-    			toggle_class(img, "svelte-1n24g5z", true);
-    			add_location(img, file$1, 157, 8, 3710);
-    			attr_dev(div1, "class", "img-container svelte-1n24g5z");
-    			add_location(div1, file$1, 125, 6, 2686);
+    			toggle_class(img, "svelte-14aj0xn", true);
+    			add_location(img, file$1, 174, 8, 4002);
+    			attr_dev(div1, "class", "img-container svelte-14aj0xn");
+    			add_location(div1, file$1, 142, 6, 2978);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1336,7 +1336,7 @@ var app = (function () {
     				dirty & /*images*/ 2 && { alt: /*image*/ ctx[14].alt || "" }
     			]));
 
-    			toggle_class(img, "svelte-1n24g5z", true);
+    			toggle_class(img, "svelte-14aj0xn", true);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1361,14 +1361,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(122:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>",
+    		source: "(139:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:2) {#each images as image, i}
+    // (138:2) {#each images as image, i}
     function create_each_block(ctx) {
     	let current;
 
@@ -1420,7 +1420,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(121:2) {#each images as image, i}",
+    		source: "(138:2) {#each images as image, i}",
     		ctx
     	});
 
@@ -1451,9 +1451,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "carousel svelte-1n24g5z");
+    			attr_dev(div, "class", "carousel svelte-14aj0xn");
     			attr_dev(div, "style", div_style_value = `transform: translate3d(${/*translateX*/ ctx[5]}px, 0, 0);`);
-    			add_location(div, file$1, 119, 0, 2422);
+    			add_location(div, file$1, 136, 0, 2714);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
