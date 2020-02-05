@@ -989,15 +989,15 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (128:10) {:else}
+    // (134:10) {:else}
     function create_else_block_1(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "empty svelte-7aq76f");
-    			add_location(div, file$1, 128, 12, 2963);
+    			attr_dev(div, "class", "empty svelte-1n24g5z");
+    			add_location(div, file$1, 134, 12, 3054);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1014,14 +1014,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(128:10) {:else}",
+    		source: "(134:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (116:10) {#if blink && curr_idx > 0}
+    // (122:10) {#if blink && curr_idx > 0}
     function create_if_block_1(ctx) {
     	let button;
     	let svg;
@@ -1040,13 +1040,13 @@ var app = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			attr_dev(path, "d", "M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594\n                  4.594z");
-    			add_location(path, file$1, 122, 16, 2780);
+    			add_location(path, file$1, 128, 16, 2871);
     			attr_dev(svg, "role", "presentation");
     			attr_dev(svg, "viewBox", "0 0 24 24");
-    			attr_dev(svg, "class", "svelte-7aq76f");
-    			add_location(svg, file$1, 121, 14, 2718);
-    			attr_dev(button, "class", "svelte-7aq76f");
-    			add_location(button, file$1, 116, 12, 2574);
+    			attr_dev(svg, "class", "svelte-1n24g5z");
+    			add_location(svg, file$1, 127, 14, 2809);
+    			attr_dev(button, "class", "svelte-1n24g5z");
+    			add_location(button, file$1, 122, 12, 2665);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1093,22 +1093,22 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(116:10) {#if blink && curr_idx > 0}",
+    		source: "(122:10) {#if blink && curr_idx > 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (142:10) {:else}
+    // (148:10) {:else}
     function create_else_block(ctx) {
     	let div;
 
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "empty svelte-7aq76f");
-    			add_location(div, file$1, 142, 12, 3433);
+    			attr_dev(div, "class", "empty svelte-1n24g5z");
+    			add_location(div, file$1, 148, 12, 3524);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -1125,14 +1125,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(142:10) {:else}",
+    		source: "(148:10) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (131:10) {#if blink && curr_idx < images.length - 1}
+    // (137:10) {#if blink && curr_idx < images.length - 1}
     function create_if_block(ctx) {
     	let button;
     	let svg;
@@ -1151,13 +1151,13 @@ var app = (function () {
     			svg = svg_element("svg");
     			path = svg_element("path");
     			attr_dev(path, "d", "M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z");
-    			add_location(path, file$1, 137, 16, 3275);
+    			add_location(path, file$1, 143, 16, 3366);
     			attr_dev(svg, "role", "presentation");
     			attr_dev(svg, "viewBox", "0 0 24 24");
-    			attr_dev(svg, "class", "svelte-7aq76f");
-    			add_location(svg, file$1, 136, 14, 3213);
-    			attr_dev(button, "class", "svelte-7aq76f");
-    			add_location(button, file$1, 131, 12, 3067);
+    			attr_dev(svg, "class", "svelte-1n24g5z");
+    			add_location(svg, file$1, 142, 14, 3304);
+    			attr_dev(button, "class", "svelte-1n24g5z");
+    			add_location(button, file$1, 137, 12, 3158);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -1204,14 +1204,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(131:10) {#if blink && curr_idx < images.length - 1}",
+    		source: "(137:10) {#if blink && curr_idx < images.length - 1}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (110:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>
+    // (116:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>
     function create_default_slot(ctx) {
     	let div1;
     	let div0;
@@ -1261,13 +1261,13 @@ var app = (function () {
     			t1 = space();
     			img = element("img");
     			t2 = space();
-    			attr_dev(div0, "class", "nav svelte-7aq76f");
-    			add_location(div0, file$1, 114, 8, 2506);
+    			attr_dev(div0, "class", "nav svelte-1n24g5z");
+    			add_location(div0, file$1, 120, 8, 2597);
     			set_attributes(img, img_data);
-    			toggle_class(img, "svelte-7aq76f", true);
-    			add_location(img, file$1, 145, 8, 3494);
-    			attr_dev(div1, "class", "img-container svelte-7aq76f");
-    			add_location(div1, file$1, 113, 6, 2470);
+    			toggle_class(img, "svelte-1n24g5z", true);
+    			add_location(img, file$1, 151, 8, 3585);
+    			attr_dev(div1, "class", "img-container svelte-1n24g5z");
+    			add_location(div1, file$1, 119, 6, 2561);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -1334,7 +1334,7 @@ var app = (function () {
     				dirty & /*images*/ 2 && { alt: /*image*/ ctx[13].alt || "" }
     			]));
 
-    			toggle_class(img, "svelte-7aq76f", true);
+    			toggle_class(img, "svelte-1n24g5z", true);
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -1359,14 +1359,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(110:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>",
+    		source: "(116:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={close}       exclude={[...left_nav_buttons, ...right_nav_buttons]}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (109:2) {#each images as image, i}
+    // (115:2) {#each images as image, i}
     function create_each_block(ctx) {
     	let current;
 
@@ -1418,7 +1418,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(109:2) {#each images as image, i}",
+    		source: "(115:2) {#each images as image, i}",
     		ctx
     	});
 
@@ -1448,9 +1448,9 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "carousel svelte-7aq76f");
+    			attr_dev(div, "class", "carousel svelte-1n24g5z");
     			attr_dev(div, "style", div_style_value = `transform: translate3d(${/*translateX*/ ctx[5]}px, 0, 0);`);
-    			add_location(div, file$1, 107, 0, 2206);
+    			add_location(div, file$1, 113, 0, 2297);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1934,7 +1934,7 @@ var app = (function () {
     const { Object: Object_1 } = globals;
     const file$3 = "src/Images/Modal.svelte";
 
-    // (100:2) {#if Component}
+    // (102:2) {#if isOpen}
     function create_if_block$1(ctx) {
     	let div3;
     	let div2;
@@ -1944,14 +1944,25 @@ var app = (function () {
     	let div3_transition;
     	let current;
     	let dispose;
-    	const component_spread_levels = [/*props*/ ctx[5]];
-    	let component_props = {};
+    	const switch_instance_spread_levels = [/*props*/ ctx[5]];
+    	var switch_value = /*Component*/ ctx[4];
 
-    	for (let i = 0; i < component_spread_levels.length; i += 1) {
-    		component_props = assign(component_props, component_spread_levels[i]);
+    	function switch_props(ctx) {
+    		let switch_instance_props = {};
+
+    		for (let i = 0; i < switch_instance_spread_levels.length; i += 1) {
+    			switch_instance_props = assign(switch_instance_props, switch_instance_spread_levels[i]);
+    		}
+
+    		return {
+    			props: switch_instance_props,
+    			$$inline: true
+    		};
     	}
 
-    	const component = new /*Component*/ ctx[4]({ props: component_props, $$inline: true });
+    	if (switch_value) {
+    		var switch_instance = new switch_value(switch_props());
+    	}
 
     	const block = {
     		c: function create() {
@@ -1959,52 +1970,78 @@ var app = (function () {
     			div2 = element("div");
     			div1 = element("div");
     			div0 = element("div");
-    			create_component(component.$$.fragment);
+    			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr_dev(div0, "class", "content svelte-1e954pe");
     			attr_dev(div0, "style", /*cssContent*/ ctx[10]);
-    			add_location(div0, file$3, 111, 10, 2933);
+    			add_location(div0, file$3, 113, 10, 2958);
     			attr_dev(div1, "class", "window svelte-1e954pe");
     			attr_dev(div1, "style", /*cssWindow*/ ctx[9]);
-    			add_location(div1, file$3, 107, 8, 2802);
+    			add_location(div1, file$3, 109, 8, 2827);
     			attr_dev(div2, "class", "window-wrap svelte-1e954pe");
-    			add_location(div2, file$3, 106, 6, 2751);
+    			add_location(div2, file$3, 108, 6, 2776);
     			attr_dev(div3, "class", "bg svelte-1e954pe");
     			attr_dev(div3, "style", /*cssBg*/ ctx[8]);
-    			add_location(div3, file$3, 100, 4, 2589);
+    			add_location(div3, file$3, 102, 4, 2614);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
     			append_dev(div3, div2);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
-    			mount_component(component, div0, null);
-    			/*div2_binding*/ ctx[29](div2);
-    			/*div3_binding*/ ctx[30](div3);
+
+    			if (switch_instance) {
+    				mount_component(switch_instance, div0, null);
+    			}
+
+    			/*div2_binding*/ ctx[30](div2);
+    			/*div3_binding*/ ctx[31](div3);
     			current = true;
-    			dispose = listen_dev(div3, "click", /*handleOuterClick*/ ctx[12], false, false, false);
+    			dispose = listen_dev(div3, "click", /*handleOuterClick*/ ctx[13], false, false, false);
     		},
     		p: function update(ctx, dirty) {
-    			const component_changes = (dirty & /*props*/ 32)
-    			? get_spread_update(component_spread_levels, [get_spread_object(/*props*/ ctx[5])])
+    			const switch_instance_changes = (dirty[0] & /*props*/ 32)
+    			? get_spread_update(switch_instance_spread_levels, [get_spread_object(/*props*/ ctx[5])])
     			: {};
 
-    			component.$set(component_changes);
+    			if (switch_value !== (switch_value = /*Component*/ ctx[4])) {
+    				if (switch_instance) {
+    					group_outros();
+    					const old_component = switch_instance;
 
-    			if (!current || dirty & /*cssContent*/ 1024) {
+    					transition_out(old_component.$$.fragment, 1, 0, () => {
+    						destroy_component(old_component, 1);
+    					});
+
+    					check_outros();
+    				}
+
+    				if (switch_value) {
+    					switch_instance = new switch_value(switch_props());
+    					create_component(switch_instance.$$.fragment);
+    					transition_in(switch_instance.$$.fragment, 1);
+    					mount_component(switch_instance, div0, null);
+    				} else {
+    					switch_instance = null;
+    				}
+    			} else if (switch_value) {
+    				switch_instance.$set(switch_instance_changes);
+    			}
+
+    			if (!current || dirty[0] & /*cssContent*/ 1024) {
     				attr_dev(div0, "style", /*cssContent*/ ctx[10]);
     			}
 
-    			if (!current || dirty & /*cssWindow*/ 512) {
+    			if (!current || dirty[0] & /*cssWindow*/ 512) {
     				attr_dev(div1, "style", /*cssWindow*/ ctx[9]);
     			}
 
-    			if (!current || dirty & /*cssBg*/ 256) {
+    			if (!current || dirty[0] & /*cssBg*/ 256) {
     				attr_dev(div3, "style", /*cssBg*/ ctx[8]);
     			}
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(component.$$.fragment, local);
+    			if (switch_instance) transition_in(switch_instance.$$.fragment, local);
 
     			add_render_callback(() => {
     				if (!div1_transition) div1_transition = create_bidirectional_transition(div1, /*transitionWindow*/ ctx[2], /*transitionWindowProps*/ ctx[3], true);
@@ -2019,7 +2056,7 @@ var app = (function () {
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(component.$$.fragment, local);
+    			if (switch_instance) transition_out(switch_instance.$$.fragment, local);
     			if (!div1_transition) div1_transition = create_bidirectional_transition(div1, /*transitionWindow*/ ctx[2], /*transitionWindowProps*/ ctx[3], false);
     			div1_transition.run(0);
     			if (!div3_transition) div3_transition = create_bidirectional_transition(div3, /*transitionBg*/ ctx[0], /*transitionBgProps*/ ctx[1], false);
@@ -2028,10 +2065,10 @@ var app = (function () {
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div3);
-    			destroy_component(component);
+    			if (switch_instance) destroy_component(switch_instance);
     			if (detaching && div1_transition) div1_transition.end();
-    			/*div2_binding*/ ctx[29](null);
-    			/*div3_binding*/ ctx[30](null);
+    			/*div2_binding*/ ctx[30](null);
+    			/*div3_binding*/ ctx[31](null);
     			if (detaching && div3_transition) div3_transition.end();
     			dispose();
     		}
@@ -2041,7 +2078,7 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(100:2) {#if Component}",
+    		source: "(102:2) {#if isOpen}",
     		ctx
     	});
 
@@ -2053,9 +2090,9 @@ var app = (function () {
     	let t;
     	let current;
     	let dispose;
-    	let if_block = /*Component*/ ctx[4] && create_if_block$1(ctx);
-    	const default_slot_template = /*$$slots*/ ctx[28].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[27], null);
+    	let if_block = /*isOpen*/ ctx[11] && create_if_block$1(ctx);
+    	const default_slot_template = /*$$slots*/ ctx[29].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[28], null);
 
     	const block = {
     		c: function create() {
@@ -2064,7 +2101,7 @@ var app = (function () {
     			t = space();
     			if (default_slot) default_slot.c();
     			attr_dev(div, "class", "svelte-1e954pe");
-    			add_location(div, file$3, 98, 0, 2561);
+    			add_location(div, file$3, 100, 0, 2589);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2079,10 +2116,10 @@ var app = (function () {
     			}
 
     			current = true;
-    			dispose = listen_dev(window, "keyup", /*handleKeyup*/ ctx[11], false, false, false);
+    			dispose = listen_dev(window, "keyup", /*handleKeyup*/ ctx[12], false, false, false);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (/*Component*/ ctx[4]) {
+    		p: function update(ctx, dirty) {
+    			if (/*isOpen*/ ctx[11]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     					transition_in(if_block, 1);
@@ -2102,8 +2139,8 @@ var app = (function () {
     				check_outros();
     			}
 
-    			if (default_slot && default_slot.p && dirty & /*$$scope*/ 134217728) {
-    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[27], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[27], dirty, null));
+    			if (default_slot && default_slot.p && dirty[0] & /*$$scope*/ 268435456) {
+    				default_slot.p(get_slot_context(default_slot_template, ctx, /*$$scope*/ ctx[28], null), get_slot_changes(default_slot_template, /*$$scope*/ ctx[28], dirty, null));
     			}
     		},
     		i: function intro(local) {
@@ -2161,17 +2198,17 @@ var app = (function () {
     	const open = (NewComponent, newProps = {}, style = { bg: {}, window: {}, content: {} }) => {
     		$$invalidate(4, Component = NewComponent);
     		$$invalidate(5, props = newProps);
-    		$$invalidate(20, customStyleBg = style.bg || {});
-    		$$invalidate(21, customStyleWindow = style.window || {});
-    		$$invalidate(22, customStyleContent = style.content || {});
+    		$$invalidate(21, customStyleBg = style.bg || {});
+    		$$invalidate(22, customStyleWindow = style.window || {});
+    		$$invalidate(23, customStyleContent = style.content || {});
     	};
 
     	const close = () => {
     		$$invalidate(4, Component = null);
     		$$invalidate(5, props = null);
-    		$$invalidate(20, customStyleBg = {});
-    		$$invalidate(21, customStyleWindow = {});
-    		$$invalidate(22, customStyleContent = {});
+    		$$invalidate(21, customStyleBg = {});
+    		$$invalidate(22, customStyleWindow = {});
+    		$$invalidate(23, customStyleContent = {});
     	};
 
     	const handleKeyup = ({ key }) => {
@@ -2223,18 +2260,18 @@ var app = (function () {
     	}
 
     	$$self.$set = $$props => {
-    		if ("key" in $$props) $$invalidate(13, key = $$props.key);
-    		if ("closeOnEsc" in $$props) $$invalidate(14, closeOnEsc = $$props.closeOnEsc);
-    		if ("closeOnOuterClick" in $$props) $$invalidate(15, closeOnOuterClick = $$props.closeOnOuterClick);
+    		if ("key" in $$props) $$invalidate(14, key = $$props.key);
+    		if ("closeOnEsc" in $$props) $$invalidate(15, closeOnEsc = $$props.closeOnEsc);
+    		if ("closeOnOuterClick" in $$props) $$invalidate(16, closeOnOuterClick = $$props.closeOnOuterClick);
     		if ("transitionBg" in $$props) $$invalidate(0, transitionBg = $$props.transitionBg);
     		if ("transitionBgProps" in $$props) $$invalidate(1, transitionBgProps = $$props.transitionBgProps);
     		if ("transitionWindow" in $$props) $$invalidate(2, transitionWindow = $$props.transitionWindow);
     		if ("transitionWindowProps" in $$props) $$invalidate(3, transitionWindowProps = $$props.transitionWindowProps);
-    		if ("styleBg" in $$props) $$invalidate(16, styleBg = $$props.styleBg);
-    		if ("styleWindow" in $$props) $$invalidate(17, styleWindow = $$props.styleWindow);
-    		if ("styleContent" in $$props) $$invalidate(18, styleContent = $$props.styleContent);
-    		if ("setContext" in $$props) $$invalidate(19, setContext$1 = $$props.setContext);
-    		if ("$$scope" in $$props) $$invalidate(27, $$scope = $$props.$$scope);
+    		if ("styleBg" in $$props) $$invalidate(17, styleBg = $$props.styleBg);
+    		if ("styleWindow" in $$props) $$invalidate(18, styleWindow = $$props.styleWindow);
+    		if ("styleContent" in $$props) $$invalidate(19, styleContent = $$props.styleContent);
+    		if ("setContext" in $$props) $$invalidate(20, setContext$1 = $$props.setContext);
+    		if ("$$scope" in $$props) $$invalidate(28, $$scope = $$props.$$scope);
     	};
 
     	$$self.$capture_state = () => {
@@ -2259,49 +2296,56 @@ var app = (function () {
     			customStyleContent,
     			cssBg,
     			cssWindow,
-    			cssContent
+    			cssContent,
+    			isOpen
     		};
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("key" in $$props) $$invalidate(13, key = $$props.key);
-    		if ("closeOnEsc" in $$props) $$invalidate(14, closeOnEsc = $$props.closeOnEsc);
-    		if ("closeOnOuterClick" in $$props) $$invalidate(15, closeOnOuterClick = $$props.closeOnOuterClick);
+    		if ("key" in $$props) $$invalidate(14, key = $$props.key);
+    		if ("closeOnEsc" in $$props) $$invalidate(15, closeOnEsc = $$props.closeOnEsc);
+    		if ("closeOnOuterClick" in $$props) $$invalidate(16, closeOnOuterClick = $$props.closeOnOuterClick);
     		if ("transitionBg" in $$props) $$invalidate(0, transitionBg = $$props.transitionBg);
     		if ("transitionBgProps" in $$props) $$invalidate(1, transitionBgProps = $$props.transitionBgProps);
     		if ("transitionWindow" in $$props) $$invalidate(2, transitionWindow = $$props.transitionWindow);
     		if ("transitionWindowProps" in $$props) $$invalidate(3, transitionWindowProps = $$props.transitionWindowProps);
-    		if ("styleBg" in $$props) $$invalidate(16, styleBg = $$props.styleBg);
-    		if ("styleWindow" in $$props) $$invalidate(17, styleWindow = $$props.styleWindow);
-    		if ("styleContent" in $$props) $$invalidate(18, styleContent = $$props.styleContent);
-    		if ("setContext" in $$props) $$invalidate(19, setContext$1 = $$props.setContext);
+    		if ("styleBg" in $$props) $$invalidate(17, styleBg = $$props.styleBg);
+    		if ("styleWindow" in $$props) $$invalidate(18, styleWindow = $$props.styleWindow);
+    		if ("styleContent" in $$props) $$invalidate(19, styleContent = $$props.styleContent);
+    		if ("setContext" in $$props) $$invalidate(20, setContext$1 = $$props.setContext);
     		if ("Component" in $$props) $$invalidate(4, Component = $$props.Component);
     		if ("props" in $$props) $$invalidate(5, props = $$props.props);
     		if ("background" in $$props) $$invalidate(6, background = $$props.background);
     		if ("wrap" in $$props) $$invalidate(7, wrap = $$props.wrap);
-    		if ("customStyleBg" in $$props) $$invalidate(20, customStyleBg = $$props.customStyleBg);
-    		if ("customStyleWindow" in $$props) $$invalidate(21, customStyleWindow = $$props.customStyleWindow);
-    		if ("customStyleContent" in $$props) $$invalidate(22, customStyleContent = $$props.customStyleContent);
+    		if ("customStyleBg" in $$props) $$invalidate(21, customStyleBg = $$props.customStyleBg);
+    		if ("customStyleWindow" in $$props) $$invalidate(22, customStyleWindow = $$props.customStyleWindow);
+    		if ("customStyleContent" in $$props) $$invalidate(23, customStyleContent = $$props.customStyleContent);
     		if ("cssBg" in $$props) $$invalidate(8, cssBg = $$props.cssBg);
     		if ("cssWindow" in $$props) $$invalidate(9, cssWindow = $$props.cssWindow);
     		if ("cssContent" in $$props) $$invalidate(10, cssContent = $$props.cssContent);
+    		if ("isOpen" in $$props) $$invalidate(11, isOpen = $$props.isOpen);
     	};
 
     	let cssBg;
     	let cssWindow;
     	let cssContent;
+    	let isOpen;
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*styleBg, customStyleBg*/ 1114112) {
+    		if ($$self.$$.dirty[0] & /*styleBg, customStyleBg*/ 2228224) {
     			 $$invalidate(8, cssBg = toCssString(Object.assign({}, styleBg, customStyleBg)));
     		}
 
-    		if ($$self.$$.dirty & /*styleWindow, customStyleWindow*/ 2228224) {
+    		if ($$self.$$.dirty[0] & /*styleWindow, customStyleWindow*/ 4456448) {
     			 $$invalidate(9, cssWindow = toCssString(Object.assign({}, styleWindow, customStyleWindow)));
     		}
 
-    		if ($$self.$$.dirty & /*styleContent, customStyleContent*/ 4456448) {
+    		if ($$self.$$.dirty[0] & /*styleContent, customStyleContent*/ 8912896) {
     			 $$invalidate(10, cssContent = toCssString(Object.assign({}, styleContent, customStyleContent)));
+    		}
+
+    		if ($$self.$$.dirty[0] & /*Component*/ 16) {
+    			 $$invalidate(11, isOpen = !!Component);
     		}
     	};
 
@@ -2317,6 +2361,7 @@ var app = (function () {
     		cssBg,
     		cssWindow,
     		cssContent,
+    		isOpen,
     		handleKeyup,
     		handleOuterClick,
     		key,
@@ -2344,19 +2389,27 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
-    			key: 13,
-    			closeOnEsc: 14,
-    			closeOnOuterClick: 15,
-    			transitionBg: 0,
-    			transitionBgProps: 1,
-    			transitionWindow: 2,
-    			transitionWindowProps: 3,
-    			styleBg: 16,
-    			styleWindow: 17,
-    			styleContent: 18,
-    			setContext: 19
-    		});
+    		init(
+    			this,
+    			options,
+    			instance$3,
+    			create_fragment$3,
+    			safe_not_equal,
+    			{
+    				key: 14,
+    				closeOnEsc: 15,
+    				closeOnOuterClick: 16,
+    				transitionBg: 0,
+    				transitionBgProps: 1,
+    				transitionWindow: 2,
+    				transitionWindowProps: 3,
+    				styleBg: 17,
+    				styleWindow: 18,
+    				styleContent: 19,
+    				setContext: 20
+    			},
+    			[-1, -1]
+    		);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,

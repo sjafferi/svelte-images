@@ -58,7 +58,7 @@
   }
   .carousel img {
     height: auto;
-    max-width: 85vw;
+    max-width: 80vw;
     max-height: 85vh;
     margin: auto;
     user-select: none;
@@ -78,19 +78,19 @@
     outline: none !important;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 5em;
+    height: 5em;
     display: flex;
     color: white;
-    margin: 0 35px;
+    margin: 0 17px;
   }
   .nav svg {
     display: inline-block;
     fill: currentcolor;
-    height: 48px;
+    height: 5em;
+    width: 5em;
     stroke: currentcolor;
     stroke-width: 0;
-    width: 48px;
   }
   .empty {
     width: 100px;
@@ -101,6 +101,12 @@
     }
     .nav button {
       margin: 0 10px;
+      width: 3em;
+      height: 3em;
+    }
+    .nav svg {
+      width: 3em;
+      height: 3em;
     }
   }
 </style>

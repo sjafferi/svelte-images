@@ -66,6 +66,8 @@
     }
   };
   setContext(key, { open, close });
+
+  $: isOpen = !!Component;
 </script>
 
 <style>
@@ -97,7 +99,7 @@
 <svelte:window on:keyup={handleKeyup} />
 
 <div>
-  {#if Component}
+  {#if isOpen}
     <div
       class="bg"
       on:click={handleOuterClick}
@@ -110,7 +112,7 @@
           transition:transitionWindow={transitionWindowProps}
           style={cssWindow}>
           <div class="content" style={cssContent}>
-            <Component {...props} />
+            <svelte:component this={Component} {...props} />
           </div>
         </div>
       </div>
