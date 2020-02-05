@@ -35,6 +35,10 @@
     curr_idx = decrement(curr_idx);
     translateX += window.innerWidth;
   }
+
+  function handleResize() {
+    translateX = -curr_idx * window.innerWidth;
+  }
 </script>
 
 <style>
@@ -110,6 +114,8 @@
     }
   }
 </style>
+
+<svelte:window on:resize={handleResize} />
 
 <div class="carousel" style={`transform: translate3d(${translateX}px, 0, 0);`}>
   {#each images as image, i}
