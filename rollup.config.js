@@ -5,7 +5,7 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import * as childProcess from 'child_process';
 
-const production = !process.env.ROLLUP_WATCH;
+const production = process.env.NODE_ENV != 'dev';
 
 function serve() {
   let started = false;

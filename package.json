@@ -1,11 +1,11 @@
 {
   "name": "svelte-images",
-  "version": "0.0.85",
+  "version": "0.0.86",
   "description": "A Svelte component for displaying images",
   "main": "./src/index.js",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "dev": "NODE_ENV=dev rollup -c -w",
     "start": "sirv docs --single",
     "start:dev": "sirv docs --single --dev",
     "build:dev": "rollup -c"
