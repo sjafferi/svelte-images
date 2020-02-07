@@ -661,13 +661,6 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
-    function set_data_dev(text, data) {
-        data = '' + data;
-        if (text.data === data)
-            return;
-        dispatch_dev("SvelteDOMSetData", { node: text, data });
-        text.data = data;
-    }
     class SvelteComponentDev extends SvelteComponent {
         constructor(options) {
             if (!options || (!options.target && !options.$$inline)) {
@@ -899,7 +892,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (160:6) {#each images as image, i}
+    // (159:6) {#each images as image, i}
     function create_each_block(ctx) {
     	let div;
     	let img;
@@ -922,9 +915,9 @@ var app = (function () {
     			t = space();
     			set_attributes(img, img_data);
     			toggle_class(img, "svelte-1vuxo0t", true);
-    			add_location(img, file$1, 161, 10, 3617);
+    			add_location(img, file$1, 160, 10, 3606);
     			attr_dev(div, "class", "img-container svelte-1vuxo0t");
-    			add_location(div, file$1, 160, 8, 3579);
+    			add_location(div, file$1, 159, 8, 3568);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -936,8 +929,8 @@ var app = (function () {
     			ctx = new_ctx;
 
     			set_attributes(img, get_spread_update(img_levels, [
-    				dirty & /*images*/ 2 && /*image*/ ctx[17],
-    				dirty & /*images*/ 2 && { alt: /*image*/ ctx[17].alt || "" }
+    				dirty & /*images*/ 1 && /*image*/ ctx[17],
+    				dirty & /*images*/ 1 && { alt: /*image*/ ctx[17].alt || "" }
     			]));
 
     			if (i !== /*i*/ ctx[19]) {
@@ -958,17 +951,17 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(160:6) {#each images as image, i}",
+    		source: "(159:6) {#each images as image, i}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (156:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={handleClose}       exclude={[left_nav_button, right_nav_button, ...image_elements]}>
+    // (155:4) <ClickOutside       className="click-outside-wrapper"       on:clickoutside={handleClose}       exclude={[left_nav_button, right_nav_button, ...image_elements]}>
     function create_default_slot(ctx) {
     	let each_1_anchor;
-    	let each_value = /*images*/ ctx[1];
+    	let each_value = /*images*/ ctx[0];
     	let each_blocks = [];
 
     	for (let i = 0; i < each_value.length; i += 1) {
@@ -991,8 +984,8 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*images, image_elements*/ 18) {
-    				each_value = /*images*/ ctx[1];
+    			if (dirty & /*images, image_elements*/ 9) {
+    				each_value = /*images*/ ctx[0];
     				let i;
 
     				for (i = 0; i < each_value.length; i += 1) {
@@ -1024,7 +1017,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(156:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={handleClose}       exclude={[left_nav_button, right_nav_button, ...image_elements]}>",
+    		source: "(155:4) <ClickOutside       className=\\\"click-outside-wrapper\\\"       on:clickoutside={handleClose}       exclude={[left_nav_button, right_nav_button, ...image_elements]}>",
     		ctx
     	});
 
@@ -1032,18 +1025,16 @@ var app = (function () {
     }
 
     function create_fragment$1(ctx) {
-    	let t0;
-    	let t1;
     	let div2;
     	let div0;
     	let button0;
     	let svg0;
     	let path0;
-    	let t2;
+    	let t0;
     	let button1;
     	let svg1;
     	let path1;
-    	let t3;
+    	let t1;
     	let div1;
     	let div1_style_value;
     	let current;
@@ -1053,9 +1044,9 @@ var app = (function () {
     			props: {
     				className: "click-outside-wrapper",
     				exclude: [
-    					/*left_nav_button*/ ctx[2],
-    					/*right_nav_button*/ ctx[3],
-    					.../*image_elements*/ ctx[4]
+    					/*left_nav_button*/ ctx[1],
+    					/*right_nav_button*/ ctx[2],
+    					.../*image_elements*/ ctx[3]
     				],
     				$$slots: { default: [create_default_slot] },
     				$$scope: { ctx }
@@ -1063,93 +1054,88 @@ var app = (function () {
     			$$inline: true
     		});
 
-    	clickoutside.$on("clickoutside", /*handleClose*/ ctx[9]);
+    	clickoutside.$on("clickoutside", /*handleClose*/ ctx[8]);
 
     	const block = {
     		c: function create() {
-    			t0 = text(/*curr_idx*/ ctx[0]);
-    			t1 = space();
     			div2 = element("div");
     			div0 = element("div");
     			button0 = element("button");
     			svg0 = svg_element("svg");
     			path0 = svg_element("path");
-    			t2 = space();
+    			t0 = space();
     			button1 = element("button");
     			svg1 = svg_element("svg");
     			path1 = svg_element("path");
-    			t3 = space();
+    			t1 = space();
     			div1 = element("div");
     			create_component(clickoutside.$$.fragment);
     			attr_dev(path0, "d", "M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z");
-    			add_location(path0, file$1, 142, 8, 2949);
+    			add_location(path0, file$1, 141, 8, 2938);
     			attr_dev(svg0, "role", "presentation");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
     			attr_dev(svg0, "class", "svelte-1vuxo0t");
-    			add_location(svg0, file$1, 141, 6, 2895);
+    			add_location(svg0, file$1, 140, 6, 2884);
     			attr_dev(button0, "class", "svelte-1vuxo0t");
-    			add_location(button0, file$1, 140, 4, 2836);
+    			add_location(button0, file$1, 139, 4, 2825);
     			attr_dev(path1, "d", "M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z");
-    			add_location(path1, file$1, 148, 8, 3179);
+    			add_location(path1, file$1, 147, 8, 3168);
     			attr_dev(svg1, "role", "presentation");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
     			attr_dev(svg1, "class", "svelte-1vuxo0t");
-    			add_location(svg1, file$1, 147, 6, 3125);
+    			add_location(svg1, file$1, 146, 6, 3114);
     			attr_dev(button1, "class", "svelte-1vuxo0t");
-    			add_location(button1, file$1, 146, 4, 3064);
+    			add_location(button1, file$1, 145, 4, 3053);
     			attr_dev(div0, "class", "nav svelte-1vuxo0t");
-    			add_location(div0, file$1, 139, 2, 2814);
+    			add_location(div0, file$1, 138, 2, 2803);
     			attr_dev(div1, "class", "carousel svelte-1vuxo0t");
-    			attr_dev(div1, "style", div1_style_value = `transform: translate3d(${/*translateX*/ ctx[5]}px, 0, 0);`);
-    			add_location(div1, file$1, 152, 2, 3284);
+    			attr_dev(div1, "style", div1_style_value = `transform: translate3d(${/*translateX*/ ctx[4]}px, 0, 0);`);
+    			add_location(div1, file$1, 151, 2, 3273);
     			attr_dev(div2, "class", "container svelte-1vuxo0t");
-    			add_location(div2, file$1, 138, 0, 2788);
+    			add_location(div2, file$1, 137, 0, 2777);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t0, anchor);
-    			insert_dev(target, t1, anchor);
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div0);
     			append_dev(div0, button0);
     			append_dev(button0, svg0);
     			append_dev(svg0, path0);
     			/*button0_binding*/ ctx[14](button0);
-    			append_dev(div0, t2);
+    			append_dev(div0, t0);
     			append_dev(div0, button1);
     			append_dev(button1, svg1);
     			append_dev(svg1, path1);
     			/*button1_binding*/ ctx[15](button1);
-    			append_dev(div2, t3);
+    			append_dev(div2, t1);
     			append_dev(div2, div1);
     			mount_component(clickoutside, div1, null);
     			current = true;
 
     			dispose = [
-    				listen_dev(window_1, "resize", /*handleResize*/ ctx[8], false, false, false),
-    				listen_dev(button0, "click", /*left*/ ctx[7], false, false, false),
-    				listen_dev(button1, "click", /*right*/ ctx[6], false, false, false)
+    				listen_dev(window_1, "resize", /*handleResize*/ ctx[7], false, false, false),
+    				listen_dev(button0, "click", /*left*/ ctx[6], false, false, false),
+    				listen_dev(button1, "click", /*right*/ ctx[5], false, false, false)
     			];
     		},
     		p: function update(ctx, [dirty]) {
-    			if (!current || dirty & /*curr_idx*/ 1) set_data_dev(t0, /*curr_idx*/ ctx[0]);
     			const clickoutside_changes = {};
 
-    			if (dirty & /*left_nav_button, right_nav_button, image_elements*/ 28) clickoutside_changes.exclude = [
-    				/*left_nav_button*/ ctx[2],
-    				/*right_nav_button*/ ctx[3],
-    				.../*image_elements*/ ctx[4]
+    			if (dirty & /*left_nav_button, right_nav_button, image_elements*/ 14) clickoutside_changes.exclude = [
+    				/*left_nav_button*/ ctx[1],
+    				/*right_nav_button*/ ctx[2],
+    				.../*image_elements*/ ctx[3]
     			];
 
-    			if (dirty & /*$$scope, images, image_elements*/ 1048594) {
+    			if (dirty & /*$$scope, images, image_elements*/ 1048585) {
     				clickoutside_changes.$$scope = { dirty, ctx };
     			}
 
     			clickoutside.$set(clickoutside_changes);
 
-    			if (!current || dirty & /*translateX*/ 32 && div1_style_value !== (div1_style_value = `transform: translate3d(${/*translateX*/ ctx[5]}px, 0, 0);`)) {
+    			if (!current || dirty & /*translateX*/ 16 && div1_style_value !== (div1_style_value = `transform: translate3d(${/*translateX*/ ctx[4]}px, 0, 0);`)) {
     				attr_dev(div1, "style", div1_style_value);
     			}
     		},
@@ -1163,8 +1149,6 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t0);
-    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div2);
     			/*button0_binding*/ ctx[14](null);
     			/*button1_binding*/ ctx[15](null);
@@ -1202,17 +1186,17 @@ var app = (function () {
     	}
 
     	function right() {
-    		$$invalidate(0, curr_idx = increment(curr_idx));
-    		$$invalidate(5, translateX = -curr_idx * window.innerWidth);
+    		$$invalidate(9, curr_idx = increment(curr_idx));
+    		$$invalidate(4, translateX = -curr_idx * window.innerWidth);
     	}
 
     	function left() {
-    		$$invalidate(0, curr_idx = decrement(curr_idx));
-    		$$invalidate(5, translateX = -curr_idx * window.innerWidth);
+    		$$invalidate(9, curr_idx = decrement(curr_idx));
+    		$$invalidate(4, translateX = -curr_idx * window.innerWidth);
     	}
 
     	function handleResize() {
-    		$$invalidate(5, translateX = -curr_idx * window.innerWidth);
+    		$$invalidate(4, translateX = -curr_idx * window.innerWidth);
     	}
 
     	const debouncedClose = debounce(close, 100, true);
@@ -1229,13 +1213,13 @@ var app = (function () {
 
     	function button0_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			$$invalidate(2, left_nav_button = $$value);
+    			$$invalidate(1, left_nav_button = $$value);
     		});
     	}
 
     	function button1_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			$$invalidate(3, right_nav_button = $$value);
+    			$$invalidate(2, right_nav_button = $$value);
     		});
     	}
 
@@ -1244,14 +1228,14 @@ var app = (function () {
 
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			image_elements[i] = $$value;
-    			$$invalidate(4, image_elements);
+    			$$invalidate(3, image_elements);
     		});
     	}
 
     	$$self.$set = $$props => {
-    		if ("images" in $$props) $$invalidate(1, images = $$props.images);
+    		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("close" in $$props) $$invalidate(10, close = $$props.close);
-    		if ("curr_idx" in $$props) $$invalidate(0, curr_idx = $$props.curr_idx);
+    		if ("curr_idx" in $$props) $$invalidate(9, curr_idx = $$props.curr_idx);
     	};
 
     	$$self.$capture_state = () => {
@@ -1266,16 +1250,15 @@ var app = (function () {
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("images" in $$props) $$invalidate(1, images = $$props.images);
+    		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("close" in $$props) $$invalidate(10, close = $$props.close);
-    		if ("curr_idx" in $$props) $$invalidate(0, curr_idx = $$props.curr_idx);
-    		if ("left_nav_button" in $$props) $$invalidate(2, left_nav_button = $$props.left_nav_button);
-    		if ("right_nav_button" in $$props) $$invalidate(3, right_nav_button = $$props.right_nav_button);
-    		if ("translateX" in $$props) $$invalidate(5, translateX = $$props.translateX);
+    		if ("curr_idx" in $$props) $$invalidate(9, curr_idx = $$props.curr_idx);
+    		if ("left_nav_button" in $$props) $$invalidate(1, left_nav_button = $$props.left_nav_button);
+    		if ("right_nav_button" in $$props) $$invalidate(2, right_nav_button = $$props.right_nav_button);
+    		if ("translateX" in $$props) $$invalidate(4, translateX = $$props.translateX);
     	};
 
     	return [
-    		curr_idx,
     		images,
     		left_nav_button,
     		right_nav_button,
@@ -1285,6 +1268,7 @@ var app = (function () {
     		left,
     		handleResize,
     		handleClose,
+    		curr_idx,
     		close,
     		increment,
     		decrement,
@@ -1298,7 +1282,7 @@ var app = (function () {
     class Carousel extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { images: 1, close: 10, curr_idx: 0 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { images: 0, close: 10, curr_idx: 9 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1310,7 +1294,7 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*images*/ ctx[1] === undefined && !("images" in props)) {
+    		if (/*images*/ ctx[0] === undefined && !("images" in props)) {
     			console.warn("<Carousel> was created without expected prop 'images'");
     		}
 

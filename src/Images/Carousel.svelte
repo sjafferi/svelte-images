@@ -135,7 +135,6 @@
 </style>
 
 <svelte:window on:resize={handleResize} />
-{curr_idx}
 <div class="container">
   <div class="nav">
     <button on:click={left} bind:this={left_nav_button}>
