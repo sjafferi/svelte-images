@@ -17,6 +17,7 @@
   }
   function onClickOutside(event) {
     if (!isExcluded(event.target)) {
+      event.preventDefault();
       dispatch("clickoutside");
     }
   }

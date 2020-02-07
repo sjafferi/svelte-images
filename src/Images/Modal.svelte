@@ -49,6 +49,7 @@
     customStyleBg = {};
     customStyleWindow = {};
     customStyleContent = {};
+    console.log("close called");
   };
   const handleKeyup = ({ key }) => {
     if (closeOnEsc && Component && key === "Escape") {
@@ -61,6 +62,7 @@
       closeOnOuterClick &&
       (event.target === background || event.target === wrap)
     ) {
+      console.log("handle outer click called");
       event.preventDefault();
       close();
     }
