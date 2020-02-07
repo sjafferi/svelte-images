@@ -120,7 +120,7 @@
   }
   @media (max-width: 550px) {
     .carousel img {
-      max-width: 60vw;
+      max-width: 100vw;
     }
     .nav button {
       margin: 0 10px;

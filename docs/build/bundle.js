@@ -914,10 +914,10 @@ var app = (function () {
     			img = element("img");
     			t = space();
     			set_attributes(img, img_data);
-    			toggle_class(img, "svelte-1vuxo0t", true);
-    			add_location(img, file$1, 160, 10, 3606);
-    			attr_dev(div, "class", "img-container svelte-1vuxo0t");
-    			add_location(div, file$1, 159, 8, 3568);
+    			toggle_class(img, "svelte-1szv2de", true);
+    			add_location(img, file$1, 160, 10, 3607);
+    			attr_dev(div, "class", "img-container svelte-1szv2de");
+    			add_location(div, file$1, 159, 8, 3569);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -939,7 +939,7 @@ var app = (function () {
     				assign_img();
     			}
 
-    			toggle_class(img, "svelte-1vuxo0t", true);
+    			toggle_class(img, "svelte-1szv2de", true);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -1071,28 +1071,28 @@ var app = (function () {
     			div1 = element("div");
     			create_component(clickoutside.$$.fragment);
     			attr_dev(path0, "d", "M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z");
-    			add_location(path0, file$1, 141, 8, 2938);
+    			add_location(path0, file$1, 141, 8, 2939);
     			attr_dev(svg0, "role", "presentation");
     			attr_dev(svg0, "viewBox", "0 0 24 24");
-    			attr_dev(svg0, "class", "svelte-1vuxo0t");
-    			add_location(svg0, file$1, 140, 6, 2884);
-    			attr_dev(button0, "class", "svelte-1vuxo0t");
-    			add_location(button0, file$1, 139, 4, 2825);
+    			attr_dev(svg0, "class", "svelte-1szv2de");
+    			add_location(svg0, file$1, 140, 6, 2885);
+    			attr_dev(button0, "class", "svelte-1szv2de");
+    			add_location(button0, file$1, 139, 4, 2826);
     			attr_dev(path1, "d", "M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z");
-    			add_location(path1, file$1, 147, 8, 3168);
+    			add_location(path1, file$1, 147, 8, 3169);
     			attr_dev(svg1, "role", "presentation");
     			attr_dev(svg1, "viewBox", "0 0 24 24");
-    			attr_dev(svg1, "class", "svelte-1vuxo0t");
-    			add_location(svg1, file$1, 146, 6, 3114);
-    			attr_dev(button1, "class", "svelte-1vuxo0t");
-    			add_location(button1, file$1, 145, 4, 3053);
-    			attr_dev(div0, "class", "nav svelte-1vuxo0t");
-    			add_location(div0, file$1, 138, 2, 2803);
-    			attr_dev(div1, "class", "carousel svelte-1vuxo0t");
+    			attr_dev(svg1, "class", "svelte-1szv2de");
+    			add_location(svg1, file$1, 146, 6, 3115);
+    			attr_dev(button1, "class", "svelte-1szv2de");
+    			add_location(button1, file$1, 145, 4, 3054);
+    			attr_dev(div0, "class", "nav svelte-1szv2de");
+    			add_location(div0, file$1, 138, 2, 2804);
+    			attr_dev(div1, "class", "carousel svelte-1szv2de");
     			attr_dev(div1, "style", div1_style_value = `transform: translate3d(${/*translateX*/ ctx[4]}px, 0, 0);`);
-    			add_location(div1, file$1, 151, 2, 3273);
-    			attr_dev(div2, "class", "container svelte-1vuxo0t");
-    			add_location(div2, file$1, 137, 0, 2777);
+    			add_location(div1, file$1, 151, 2, 3274);
+    			attr_dev(div2, "class", "container svelte-1szv2de");
+    			add_location(div2, file$1, 137, 0, 2778);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
