@@ -7,24 +7,25 @@
   export let curr_idx = 0;
   let left_nav_button;
   let right_nav_button;
+  const image_elements = new Array(images.length);
   let translateX = -curr_idx * window.innerWidth;
 
   function increment(num) {
-    return num >= images.length - 1 ? num : num + 1;
+    return num >= images.length - 1 ? 0 : num + 1;
   }
 
   function decrement(num) {
-    return num == 0 ? 0 : num - 1;
+    return num == 0 ? images.length - 1 : num - 1;
   }
 
   function right() {
     curr_idx = increment(curr_idx);
-    translateX -= window.innerWidth;
+    translateX = -curr_idx * window.innerWidth;
   }
 
   function left() {
     curr_idx = decrement(curr_idx);
-    translateX += window.innerWidth;
+    translateX = -curr_idx * window.innerWidth;
   }
 
   function handleResize() {
@@ -39,6 +40,9 @@
 </script>
 
 <style>
+  .container {
+    position: relative;
+  }
   .carousel {
     position: relative;
     overflow: hidden;
@@ -56,6 +60,7 @@
     position: absolute;
     width: 100vw;
     height: 100%;
+    z-index: 4;
   }
   .carousel img {
     height: auto;
@@ -65,12 +70,12 @@
     user-select: none;
   }
   :global(.carousel .click-outside-wrapper) {
-    width: 100vw;
+    display: flex;
   }
   .img-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
   }
   .nav button {
     cursor: pointer;
@@ -130,39 +135,33 @@
 </style>
 
 <svelte:window on:resize={handleResize} />
-
-<div class="carousel" style={`transform: translate3d(${translateX}px, 0, 0);`}>
-  <div
-    class="nav"
-    style={`transform: translate3d(${-1 * translateX}px, 0, 0);`}>
-    {#if curr_idx > 0}
-      <button on:click={left} bind:this={left_nav_button}>
-        <svg role="presentation" viewBox="0 0 24 24">
-          <path
-            d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z" />
-        </svg>
-      </button>
-    {:else}
-      <div class="empty" />
-    {/if}
-    {#if curr_idx < images.length - 1}
-      <button on:click={right} bind:this={right_nav_button}>
-        <svg role="presentation" viewBox="0 0 24 24">
-          <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z" />
-        </svg>
-      </button>
-    {:else}
-      <div class="empty" />
-    {/if}
+{curr_idx}
+<div class="container">
+  <div class="nav">
+    <button on:click={left} bind:this={left_nav_button}>
+      <svg role="presentation" viewBox="0 0 24 24">
+        <path
+          d="M15.422 16.078l-1.406 1.406-6-6 6-6 1.406 1.406-4.594 4.594z" />
+      </svg>
+    </button>
+    <button on:click={right} bind:this={right_nav_button}>
+      <svg role="presentation" viewBox="0 0 24 24">
+        <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z" />
+      </svg>
+    </button>
   </div>
-  {#each images as image, i}
+  <div
+    class="carousel"
+    style={`transform: translate3d(${translateX}px, 0, 0);`}>
     <ClickOutside
       className="click-outside-wrapper"
       on:clickoutside={handleClose}
-      exclude={[left_nav_button, right_nav_button]}>
-      <div class="img-container">
-        <img {...image} alt={image.alt || ''} />
-      </div>
+      exclude={[left_nav_button, right_nav_button, ...image_elements]}>
+      {#each images as image, i}
+        <div class="img-container">
+          <img {...image} bind:this={image_elements[i]} alt={image.alt || ''} />
+        </div>
+      {/each}
     </ClickOutside>
-  {/each}
+  </div>
 </div>
