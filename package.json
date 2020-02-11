@@ -1,6 +1,6 @@
 {
   "name": "svelte-images",
-  "version": "0.0.87",
+  "version": "0.0.88",
   "description": "A Svelte component for displaying images",
   "main": "./src/index.js",
   "scripts": {
