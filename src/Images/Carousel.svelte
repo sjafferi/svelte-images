@@ -1,9 +1,10 @@
 <script>
   import { fade } from "svelte/transition";
+  import { close } from "./modalStore.js";
   import { debounce } from "../util.js";
   import ClickOutside from "./ClickOutside.svelte";
+
   export let images;
-  export let close;
   export let curr_idx = 0;
   let left_nav_button;
   let right_nav_button;
@@ -20,15 +21,15 @@
 
   function right() {
     curr_idx = increment(curr_idx);
-    translateX = -curr_idx * window.innerWidth;
+    updatePosition();
   }
 
   function left() {
     curr_idx = decrement(curr_idx);
-    translateX = -curr_idx * window.innerWidth;
+    updatePosition();
   }
 
-  function handleResize() {
+  function updatePosition() {
     translateX = -curr_idx * window.innerWidth;
   }
 
@@ -134,7 +135,7 @@
   }
 </style>
 
-<svelte:window on:resize={handleResize} />
+<svelte:window on:resize={updatePosition} />
 <div class="container">
   <div class="nav">
     <button on:click={left} bind:this={left_nav_button}>

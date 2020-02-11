@@ -1,74 +1,35 @@
 <script>
-  // from https://github.com/flekschas/svelte-simple-modal
-  import { setContext as baseSetContext } from "svelte";
+  import { onDestroy } from "svelte";
   import { fade } from "svelte/transition";
-  export let key = "simple-modal";
-  export let closeOnEsc = true;
-  export let closeOnOuterClick = true;
-  export let transitionBg = fade;
-  export let transitionBgProps = { duration: 250 };
-  export let transitionWindow = transitionBg;
-  export let transitionWindowProps = transitionBgProps;
-  export let styleBg = { top: 0, left: 0 };
-  export let styleWindow = {};
-  export let styleContent = {};
-  export let setContext = baseSetContext;
+  import { modalStore, open, close } from "./modalStore.js";
 
-  let Component = null;
+  let state = {};
+  let isOpen = false;
   let props = null;
+  let Component = null;
   let background;
   let wrap;
-  let customStyleBg = {};
-  let customStyleWindow = {};
-  let customStyleContent = {};
-  const camelCaseToDash = str =>
-    str.replace(/([a-zA-Z])(?=[A-Z])/g, "$1-").toLowerCase();
-  const toCssString = props =>
-    Object.keys(props).reduce(
-      (str, key) => `${str}; ${camelCaseToDash(key)}: ${props[key]}`,
-      ""
-    );
-  $: cssBg = toCssString(Object.assign({}, styleBg, customStyleBg));
-  $: cssWindow = toCssString(Object.assign({}, styleWindow, customStyleWindow));
-  $: cssContent = toCssString(
-    Object.assign({}, styleContent, customStyleContent)
-  );
-  const open = (
-    NewComponent,
-    newProps = {},
-    style = { bg: {}, window: {}, content: {} }
-  ) => {
-    Component = NewComponent;
-    props = newProps;
-    customStyleBg = style.bg || {};
-    customStyleWindow = style.window || {};
-    customStyleContent = style.content || {};
-  };
-  const close = () => {
-    Component = null;
-    props = null;
-    customStyleBg = {};
-    customStyleWindow = {};
-    customStyleContent = {};
-  };
+
   const handleKeyup = ({ key }) => {
-    if (closeOnEsc && Component && key === "Escape") {
+    if (Component && key === "Escape") {
       event.preventDefault();
       close();
     }
   };
   const handleOuterClick = event => {
-    if (
-      closeOnOuterClick &&
-      (event.target === background || event.target === wrap)
-    ) {
+    if (event.target === background || event.target === wrap) {
       event.preventDefault();
       close();
     }
   };
-  setContext(key, { open, close });
 
-  $: isOpen = !!Component;
+  const unsubscribe = modalStore.subscribe(value => {
+    Component = value.Component;
+    props = value.props;
+    isOpen = value.isOpen;
+  });
+
+  onDestroy(unsubscribe);
 </script>
 
 <style>
@@ -85,11 +46,10 @@
     height: 100vh;
     background: rgba(0, 0, 0, 0.66);
     transition: opacity 200ms ease 0s;
+    top: 0;
+    left: 0;
   }
   .window-wrap {
-    position: relative;
-  }
-  .window {
     position: relative;
   }
   .content {
@@ -105,16 +65,13 @@
       class="bg"
       on:click={handleOuterClick}
       bind:this={background}
-      transition:transitionBg={transitionBgProps}
-      style={cssBg}>
-      <div class="window-wrap" bind:this={wrap}>
-        <div
-          class="window"
-          transition:transitionWindow={transitionWindowProps}
-          style={cssWindow}>
-          <div class="content" style={cssContent}>
-            <svelte:component this={Component} {...props} />
-          </div>
+      transition:fade={{ duration: 300 }}>
+      <div
+        class="window-wrap"
+        bind:this={wrap}
+        transition:fade={{ duration: 300 }}>
+        <div class="content">
+          <svelte:component this={Component} {...props} />
         </div>
       </div>
     </div>

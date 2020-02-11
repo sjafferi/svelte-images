@@ -1,16 +1,13 @@
 <script>
-  import { getContext } from "svelte";
-  import Carousel from "./Carousel.svelte";
+  import { Modal, open, close } from "./carousel.js";
 
   export let images = [];
   export let gutter = 2;
   export let numCols;
 
-  const { open, close } = getContext("simple-modal");
-
   const popModal = idx =>
     setTimeout(() => {
-      open(Carousel, { images, curr_idx: idx, close });
+      open(images, idx);
     }, 0);
 </script>
 
@@ -42,3 +39,5 @@
       on:click={() => popModal(i)} />
   {/each}
 </div>
+
+<Modal />

@@ -8,6 +8,7 @@ A Svelte component for displaying images
 Install svelte-images
    `yarn add svelte-images`
 
+
 ## Example
 
 ```html
