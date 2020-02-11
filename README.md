@@ -93,7 +93,7 @@ Install svelte-images
 
 ```
 
-### Images pomponent properties
+### Images component properties
 
 | Property | Format                                                    | Default                                           |
 | -------- | --------------------------------------------------------- | ------------------------------------------------- |
