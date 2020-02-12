@@ -1,6 +1,6 @@
 {
   "name": "svelte-images",
-  "version": "0.0.88",
+  "version": "0.0.90",
   "description": "A Svelte component for displaying images",
   "main": "./src/index.js",
   "scripts": {
@@ -16,7 +16,9 @@
   },
   "keywords": [
     "svelte",
-    "images"
+    "images",
+    "sveltejs",
+    "sveltev3"
   ],
   "author": "sjafferi",
   "license": "MIT",

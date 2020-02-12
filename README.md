@@ -8,8 +8,9 @@ A Svelte component for displaying images
 Install svelte-images
    `yarn add svelte-images`
 
+## Examples
 
-## Example with Gallery + Carousel
+### Gallery + Carousel
 
 ```html
 <script>
@@ -47,7 +48,7 @@ Install svelte-images
 </main>
 ```
 
-### Example with just Carousel
+### Carousel only
 
 ```html
 <script>

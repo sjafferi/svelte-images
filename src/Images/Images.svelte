@@ -1,18 +1,30 @@
 <script>
+  import { onMount } from "svelte";
   import { Modal, open, close } from "./carousel.js";
 
   export let images = [];
   export let gutter = 2;
   export let numCols;
-
   const popModal = idx =>
     setTimeout(() => {
       open(images, idx);
     }, 0);
+
+  let galleryElems;
+  let galleryElem;
+  let showModal;
+  onMount(() => {
+    galleryElems = document.getElementsByClassName("svelte-images-gallery");
+    const index = Array.prototype.findIndex.call(
+      galleryElems,
+      elem => elem === galleryElem
+    );
+    showModal = index === 0;
+  });
 </script>
 
 <style>
-  .gallery {
+  .svelte-images-gallery {
     display: flex;
     flex-flow: row wrap;
   }
@@ -29,7 +41,10 @@
   }
 </style>
 
-<div class="gallery" style="--gutter: {gutter};">
+<div
+  class="svelte-images-gallery"
+  style="--gutter: {gutter};"
+  bind:this={galleryElem}>
   {#each images as image, i}
     <img
       style={numCols != undefined ? `width: ${100 / numCols - 6}%;` : 'max-width: 200px;'}
@@ -40,4 +55,6 @@
   {/each}
 </div>
 
-<Modal />
+{#if showModal}
+  <Modal />
+{/if}

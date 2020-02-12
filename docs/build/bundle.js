@@ -231,6 +231,9 @@ var app = (function () {
             throw new Error(`Function called outside component initialization`);
         return current_component;
     }
+    function onMount(fn) {
+        get_current_component().$$.on_mount.push(fn);
+    }
     function onDestroy(fn) {
         get_current_component().$$.on_destroy.push(fn);
     }
@@ -1683,12 +1686,12 @@ var app = (function () {
 
     function get_each_context$1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[5] = list[i];
-    	child_ctx[7] = i;
+    	child_ctx[9] = list[i];
+    	child_ctx[11] = i;
     	return child_ctx;
     }
 
-    // (33:2) {#each images as image, i}
+    // (48:2) {#each images as image, i}
     function create_each_block$1(ctx) {
     	let img;
     	let dispose;
@@ -1699,11 +1702,11 @@ var app = (function () {
     			? `width: ${100 / /*numCols*/ ctx[2] - 6}%;`
     			: "max-width: 200px;"
     		},
-    		/*image*/ ctx[5],
+    		/*image*/ ctx[9],
     		{
-    			src: /*image*/ ctx[5].thumbnail || /*image*/ ctx[5].src
+    			src: /*image*/ ctx[9].thumbnail || /*image*/ ctx[9].src
     		},
-    		{ alt: /*image*/ ctx[5].alt || "" }
+    		{ alt: /*image*/ ctx[9].alt || "" }
     	];
 
     	let img_data = {};
@@ -1713,15 +1716,15 @@ var app = (function () {
     	}
 
     	function click_handler(...args) {
-    		return /*click_handler*/ ctx[4](/*i*/ ctx[7], ...args);
+    		return /*click_handler*/ ctx[7](/*i*/ ctx[11], ...args);
     	}
 
     	const block = {
     		c: function create() {
     			img = element("img");
     			set_attributes(img, img_data);
-    			toggle_class(img, "svelte-18y9yg1", true);
-    			add_location(img, file$3, 33, 4, 589);
+    			toggle_class(img, "svelte-foh56", true);
+    			add_location(img, file$3, 48, 4, 981);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, img, anchor);
@@ -1736,14 +1739,14 @@ var app = (function () {
     					? `width: ${100 / /*numCols*/ ctx[2] - 6}%;`
     					: "max-width: 200px;"
     				},
-    				dirty & /*images*/ 1 && /*image*/ ctx[5],
+    				dirty & /*images*/ 1 && /*image*/ ctx[9],
     				dirty & /*images*/ 1 && {
-    					src: /*image*/ ctx[5].thumbnail || /*image*/ ctx[5].src
+    					src: /*image*/ ctx[9].thumbnail || /*image*/ ctx[9].src
     				},
-    				dirty & /*images*/ 1 && { alt: /*image*/ ctx[5].alt || "" }
+    				dirty & /*images*/ 1 && { alt: /*image*/ ctx[9].alt || "" }
     			]));
 
-    			toggle_class(img, "svelte-18y9yg1", true);
+    			toggle_class(img, "svelte-foh56", true);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(img);
@@ -1755,7 +1758,45 @@ var app = (function () {
     		block,
     		id: create_each_block$1.name,
     		type: "each",
-    		source: "(33:2) {#each images as image, i}",
+    		source: "(48:2) {#each images as image, i}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (58:0) {#if showModal}
+    function create_if_block$1(ctx) {
+    	let current;
+    	const modal = new Modal({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(modal.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(modal, target, anchor);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(modal.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(modal.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(modal, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(58:0) {#if showModal}",
     		ctx
     	});
 
@@ -1765,6 +1806,7 @@ var app = (function () {
     function create_fragment$3(ctx) {
     	let div;
     	let t;
+    	let if_block_anchor;
     	let current;
     	let each_value = /*images*/ ctx[0];
     	let each_blocks = [];
@@ -1773,7 +1815,7 @@ var app = (function () {
     		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
     	}
 
-    	const modal = new Modal({ $$inline: true });
+    	let if_block = /*showModal*/ ctx[4] && create_if_block$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -1784,10 +1826,11 @@ var app = (function () {
     			}
 
     			t = space();
-    			create_component(modal.$$.fragment);
-    			attr_dev(div, "class", "gallery svelte-18y9yg1");
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			attr_dev(div, "class", "svelte-images-gallery svelte-foh56");
     			set_style(div, "--gutter", /*gutter*/ ctx[1]);
-    			add_location(div, file$3, 31, 0, 506);
+    			add_location(div, file$3, 43, 0, 854);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1799,12 +1842,14 @@ var app = (function () {
     				each_blocks[i].m(div, null);
     			}
 
+    			/*div_binding*/ ctx[8](div);
     			insert_dev(target, t, anchor);
-    			mount_component(modal, target, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*numCols, undefined, images, popModal*/ 13) {
+    			if (dirty & /*numCols, undefined, images, popModal*/ 37) {
     				each_value = /*images*/ ctx[0];
     				let i;
 
@@ -1830,21 +1875,42 @@ var app = (function () {
     			if (!current || dirty & /*gutter*/ 2) {
     				set_style(div, "--gutter", /*gutter*/ ctx[1]);
     			}
+
+    			if (/*showModal*/ ctx[4]) {
+    				if (!if_block) {
+    					if_block = create_if_block$1(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				} else {
+    					transition_in(if_block, 1);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(modal.$$.fragment, local);
+    			transition_in(if_block);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(modal.$$.fragment, local);
+    			transition_out(if_block);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
     			destroy_each(each_blocks, detaching);
+    			/*div_binding*/ ctx[8](null);
     			if (detaching) detach_dev(t);
-    			destroy_component(modal, detaching);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 
@@ -1871,6 +1937,16 @@ var app = (function () {
     		0
     	);
 
+    	let galleryElems;
+    	let galleryElem;
+    	let showModal;
+
+    	onMount(() => {
+    		galleryElems = document.getElementsByClassName("svelte-images-gallery");
+    		const index = Array.prototype.findIndex.call(galleryElems, elem => elem === galleryElem);
+    		$$invalidate(4, showModal = index === 0);
+    	});
+
     	const writable_props = ["images", "gutter", "numCols"];
 
     	Object.keys($$props).forEach(key => {
@@ -1879,6 +1955,12 @@ var app = (function () {
 
     	const click_handler = i => popModal(i);
 
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			$$invalidate(3, galleryElem = $$value);
+    		});
+    	}
+
     	$$self.$set = $$props => {
     		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("gutter" in $$props) $$invalidate(1, gutter = $$props.gutter);
@@ -1886,16 +1968,36 @@ var app = (function () {
     	};
 
     	$$self.$capture_state = () => {
-    		return { images, gutter, numCols };
+    		return {
+    			images,
+    			gutter,
+    			numCols,
+    			galleryElems,
+    			galleryElem,
+    			showModal
+    		};
     	};
 
     	$$self.$inject_state = $$props => {
     		if ("images" in $$props) $$invalidate(0, images = $$props.images);
     		if ("gutter" in $$props) $$invalidate(1, gutter = $$props.gutter);
     		if ("numCols" in $$props) $$invalidate(2, numCols = $$props.numCols);
+    		if ("galleryElems" in $$props) galleryElems = $$props.galleryElems;
+    		if ("galleryElem" in $$props) $$invalidate(3, galleryElem = $$props.galleryElem);
+    		if ("showModal" in $$props) $$invalidate(4, showModal = $$props.showModal);
     	};
 
-    	return [images, gutter, numCols, popModal, click_handler];
+    	return [
+    		images,
+    		gutter,
+    		numCols,
+    		galleryElem,
+    		showModal,
+    		popModal,
+    		galleryElems,
+    		click_handler,
+    		div_binding
+    	];
     }
 
     class Images extends SvelteComponentDev {
