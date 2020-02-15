@@ -42,7 +42,4 @@
     "svelte-preprocess": "^3.3.0",
     "typescript": "^3.6.4"
   },
-  "dependencies": {
-    "svelte-waypoint": "^0.1.4"
-  }
 }
