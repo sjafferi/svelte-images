@@ -1,4 +1,5 @@
 <script>
+  import Image from "./Image.svelte";
   import { fade } from "svelte/transition";
   import { close } from "./modalStore.js";
   import { debounce } from "../util.js";
@@ -63,7 +64,7 @@
     height: 100%;
     z-index: 4;
   }
-  .carousel img {
+  :global(.carousel img) {
     height: auto;
     max-width: 80vw;
     max-height: 85vh;
@@ -106,7 +107,7 @@
     width: 100px;
   }
   @media (max-width: 800px) {
-    .carousel img {
+    :global(.carousel img) {
       max-width: 75vw;
     }
     .nav button {
@@ -120,7 +121,7 @@
     }
   }
   @media (max-width: 550px) {
-    .carousel img {
+    :global(.carousel img) {
       max-width: 100vw;
     }
     .nav button {
@@ -159,7 +160,7 @@
       exclude={[left_nav_button, right_nav_button, ...image_elements]}>
       {#each images as image, i}
         <div class="img-container">
-          <img {...image} bind:this={image_elements[i]} alt={image.alt || ''} />
+          <Image imageProps={image} bind:this={image_elements[i]} />
         </div>
       {/each}
     </ClickOutside>

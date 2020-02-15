@@ -11,6 +11,8 @@
   }
 </style>
 
+<svelte:head>Svelte Images | Demo</svelte:head>
+
 <main>
   <Images {images} gutter={5} numCols={3} />
 </main>

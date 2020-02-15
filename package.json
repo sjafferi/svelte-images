@@ -1,6 +1,6 @@
 {
   "name": "svelte-images",
-  "version": "0.0.90",
+  "version": "0.0.91",
   "description": "A Svelte component for displaying images",
   "main": "./src/index.js",
   "scripts": {
@@ -42,5 +42,7 @@
     "svelte-preprocess": "^3.3.0",
     "typescript": "^3.6.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "svelte-waypoint": "^0.1.4"
+  }
 }
