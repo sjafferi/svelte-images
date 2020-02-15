@@ -23,6 +23,7 @@
   }
   .loaded {
     opacity: 1;
+    transition: none;
   }
 </style>
 
