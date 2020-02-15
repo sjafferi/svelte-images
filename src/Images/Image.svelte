@@ -5,25 +5,25 @@
   export let onClick = () => {};
   let className = "";
   let loaded = !lazy;
+  let afterLoad = false;
   function load(img) {
-    img.onload = () => (loaded = true);
+    img.onload = () => {
+      loaded = true;
+      setTimeout(() => (afterLoad = true), 1500);
+    };
   }
 </script>
 
 <style>
   img {
     opacity: 0;
-    transition: opacity 0.4s ease, filter 0.5s ease;
-    transition-delay: 0.7s;
+    transition: all 1s ease;
   }
-  .blur {
-    opacity: 0.75;
-    filter: blur(5px);
-    background: grey;
+  .after-load {
+    transition: none;
   }
   .loaded {
     opacity: 1;
-    transition: none;
   }
 </style>
 
@@ -31,6 +31,7 @@
   on:click={onClick}
   use:load
   class:blur={!loaded}
+  class:after-load={afterLoad}
   class:loaded
   {...imageProps}
   alt={imageProps.alt || ''} />

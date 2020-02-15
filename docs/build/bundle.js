@@ -692,9 +692,10 @@ var app = (function () {
     			img = element("img");
     			set_attributes(img, img_data);
     			toggle_class(img, "blur", !/*loaded*/ ctx[2]);
+    			toggle_class(img, "after-load", /*afterLoad*/ ctx[3]);
     			toggle_class(img, "loaded", /*loaded*/ ctx[2]);
-    			toggle_class(img, "svelte-11jifa5", true);
-    			add_location(img, file, 29, 0, 480);
+    			toggle_class(img, "svelte-1ayq9qu", true);
+    			add_location(img, file, 29, 0, 458);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -704,7 +705,7 @@ var app = (function () {
 
     			dispose = [
     				listen_dev(img, "click", /*onClick*/ ctx[1], false, false, false),
-    				action_destroyer(load_action = /*load*/ ctx[3].call(null, img))
+    				action_destroyer(load_action = /*load*/ ctx[4].call(null, img))
     			];
     		},
     		p: function update(ctx, [dirty]) {
@@ -714,8 +715,9 @@ var app = (function () {
     			]));
 
     			toggle_class(img, "blur", !/*loaded*/ ctx[2]);
+    			toggle_class(img, "after-load", /*afterLoad*/ ctx[3]);
     			toggle_class(img, "loaded", /*loaded*/ ctx[2]);
-    			toggle_class(img, "svelte-11jifa5", true);
+    			toggle_class(img, "svelte-1ayq9qu", true);
     		},
     		i: noop,
     		o: noop,
@@ -746,9 +748,13 @@ var app = (function () {
 
     	let className = "";
     	let loaded = !lazy;
+    	let afterLoad = false;
 
     	function load(img) {
-    		img.onload = () => $$invalidate(2, loaded = true);
+    		img.onload = () => {
+    			$$invalidate(2, loaded = true);
+    			setTimeout(() => $$invalidate(3, afterLoad = true), 1500);
+    		};
     	}
 
     	const writable_props = ["lazy", "imageProps", "onClick"];
@@ -758,7 +764,7 @@ var app = (function () {
     	});
 
     	$$self.$set = $$props => {
-    		if ("lazy" in $$props) $$invalidate(4, lazy = $$props.lazy);
+    		if ("lazy" in $$props) $$invalidate(5, lazy = $$props.lazy);
     		if ("imageProps" in $$props) $$invalidate(0, imageProps = $$props.imageProps);
     		if ("onClick" in $$props) $$invalidate(1, onClick = $$props.onClick);
     	};
@@ -769,25 +775,27 @@ var app = (function () {
     			imageProps,
     			onClick,
     			className,
-    			loaded
+    			loaded,
+    			afterLoad
     		};
     	};
 
     	$$self.$inject_state = $$props => {
-    		if ("lazy" in $$props) $$invalidate(4, lazy = $$props.lazy);
+    		if ("lazy" in $$props) $$invalidate(5, lazy = $$props.lazy);
     		if ("imageProps" in $$props) $$invalidate(0, imageProps = $$props.imageProps);
     		if ("onClick" in $$props) $$invalidate(1, onClick = $$props.onClick);
     		if ("className" in $$props) className = $$props.className;
     		if ("loaded" in $$props) $$invalidate(2, loaded = $$props.loaded);
+    		if ("afterLoad" in $$props) $$invalidate(3, afterLoad = $$props.afterLoad);
     	};
 
-    	return [imageProps, onClick, loaded, load, lazy];
+    	return [imageProps, onClick, loaded, afterLoad, load, lazy];
     }
 
     class Image extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { lazy: 4, imageProps: 0, onClick: 1 });
+    		init(this, options, instance, create_fragment, safe_not_equal, { lazy: 5, imageProps: 0, onClick: 1 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
