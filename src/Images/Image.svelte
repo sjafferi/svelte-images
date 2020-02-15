@@ -1,6 +1,4 @@
 <script>
-  import Waypoint from "svelte-waypoint";
-
   export let lazy = true;
   export let imageProps = {};
 
