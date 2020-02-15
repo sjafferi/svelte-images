@@ -41,5 +41,5 @@
     "svelte": "^3.16.1",
     "svelte-preprocess": "^3.3.0",
     "typescript": "^3.6.4"
-  },
+  }
 }
