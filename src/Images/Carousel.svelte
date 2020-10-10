@@ -103,9 +103,6 @@
     stroke: currentcolor;
     stroke-width: 0;
   }
-  .empty {
-    width: 100px;
-  }
   @media (max-width: 800px) {
     :global(.carousel img) {
       max-width: 75vw;
