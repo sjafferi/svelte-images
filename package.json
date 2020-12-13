@@ -1,7 +1,7 @@
 {
-  "name": "svelte-images",
-  "version": "0.0.94",
-  "description": "A Svelte component for displaying images",
+  "name": "@anoram/svelte-images",
+  "version": "0.0.1",
+  "description": "A Svelte component for displaying images fork of svelte-images",
   "main": "./src/index.js",
   "scripts": {
     "build": "rollup -c",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sjafferi/svelte-images.git"
+    "url": "git+https://github.com/peopledrivemecrazy/svelte-images.git"
   },
   "keywords": [
     "svelte",
@@ -20,12 +20,12 @@
     "sveltejs",
     "sveltev3"
   ],
-  "author": "sjafferi",
+  "author": "shriji",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sjafferi/svelte-images/issues"
+    "url": "https://github.com/peopledrivemecrazy/svelte-images/issues"
   },
-  "homepage": "https://github.com/sjafferi/svelte-images#readme",
+  "homepage": "https://github.com/peopledrivemecrazy/svelte-images#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
