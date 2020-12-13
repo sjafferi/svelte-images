@@ -42,7 +42,7 @@
 </script>
 
 <style>
-  .container {
+  .carousel-container {
     position: relative;
   }
   .carousel {
@@ -90,7 +90,7 @@
     height: 5em;
     display: flex;
     color: white;
-    margin: 0 17px;
+    margin: 0 3em;
   }
   .nav button:hover {
     background: rgba(255, 255, 255, 0.3);
@@ -102,9 +102,6 @@
     width: 5em;
     stroke: currentcolor;
     stroke-width: 0;
-  }
-  .empty {
-    width: 100px;
   }
   @media (max-width: 800px) {
     :global(.carousel img) {
@@ -137,7 +134,7 @@
 </style>
 
 <svelte:window on:resize={updatePosition} />
-<div class="container">
+<div class="carousel-container">
   <div class="nav">
     <button on:click={left} bind:this={left_nav_button}>
       <svg role="presentation" viewBox="0 0 24 24">
