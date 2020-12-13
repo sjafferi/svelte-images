@@ -4,7 +4,7 @@ A Svelte component for displaying images
 [Demo](https://sjafferi.github.io/svelte-images/)
 
 
-Fixed few bugs
+Fixed few bugs [PR#4](https://github.com/sjafferi/svelte-images/pull/4)
 ## Installation
 
 Install svelte-images
